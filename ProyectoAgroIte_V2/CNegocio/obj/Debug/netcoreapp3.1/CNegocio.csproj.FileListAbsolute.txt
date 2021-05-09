@@ -1,0 +1,14 @@
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CNegocio.deps.json
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CNegocio.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CNegocio.pdb
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CDatos.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CEntidad.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CDatos.pdb
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CEntidad.pdb
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.csprojAssemblyReference.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.AssemblyInfoInputs.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.AssemblyInfo.cs
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.csproj.CoreCompileInputs.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.csproj.CopyComplete
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.pdb

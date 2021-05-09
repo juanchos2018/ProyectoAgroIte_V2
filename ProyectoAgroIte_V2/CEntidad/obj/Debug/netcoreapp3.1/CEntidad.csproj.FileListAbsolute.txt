@@ -1,0 +1,9 @@
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\bin\Debug\netcoreapp3.1\CEntidad.deps.json
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\bin\Debug\netcoreapp3.1\CEntidad.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\bin\Debug\netcoreapp3.1\CEntidad.pdb
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.csprojAssemblyReference.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.AssemblyInfoInputs.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.AssemblyInfo.cs
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.csproj.CoreCompileInputs.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.pdb
