@@ -21,7 +21,7 @@ namespace CEntidad
 
 
         [NotMapped]
-        public int? IdActividad { get; set; }
+        public int IdActividad { get; set; }
 
         [StringLength(500)]
         public string Nombres { get; set; }

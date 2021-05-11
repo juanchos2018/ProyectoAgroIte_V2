@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {}
+    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {}
   },
   "projects": {
-    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
+    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
+        "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
         "projectName": "CEntidad",
-        "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
+        "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
         "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CEntidad\\obj\\",
+        "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

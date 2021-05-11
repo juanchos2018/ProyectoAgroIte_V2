@@ -1158,11 +1158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
+      "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
       "projectName": "CNegocio",
-      "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
+      "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CNegocio\\obj\\",
+      "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1183,11 +1183,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj": {
-              "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj"
+            "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj": {
+              "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj"
             },
-            "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
-              "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj"
+            "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
+              "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj"
             }
           }
         }

@@ -29,10 +29,31 @@ export default new Router({
         component: () => import('./views/Products.vue')
     },
     {
+        path: '/nosotros',
+        name: 'nosotros',
+        component: () => import('./views/nosotros/Nosotros.vue')
+    },
+    {
+        path: '/registro',
+        name: 'registro',
+        component: () => import('./views/registro/Registro.vue')
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('./views/login/Login.vue')
+    },
+    {
+        path: '/menu',
+        name: 'menu',
+        component: () => import('./views/menu/Menu.vue')
+    },
+    {
         path: '/products/:id',
         name: 'productDetails',
         component: () => import('./components/products/ProductDetail.vue')
     },
+  
     {
         path: '/cart',
         name: 'cart',

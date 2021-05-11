@@ -24,6 +24,19 @@ namespace ProyectoAgroIte_V2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("VueCorsPolicy", builder =>
+                {
+                    builder
+
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+                // options.AddDefaultPolicy(builder => builder.WithOrigins("http://localhost:3000"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +58,7 @@ namespace ProyectoAgroIte_V2
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors("VueCorsPolicy");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

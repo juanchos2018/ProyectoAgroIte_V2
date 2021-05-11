@@ -15,6 +15,26 @@ Vue.use(BootstrapVue);
 Vue.use(VBHoverPlugin)
 Vue.config.productionTip = false;
 
+
+Vue.mixin({
+  data: function() {
+    return {
+      get RutaNetCore() {
+        // servidor       
+          //return "http://192.168.1.11:8081/apixml2/";
+         //local
+         return "https://localhost:44357/";         
+      },
+      get RutaApiReniec(){
+           return "http://aveoperu.com/dniconsulta/";             
+      },
+     
+    }
+  }
+})
+
+
+
 router.beforeResolve((to, from, next) => {
   if (to.name) {
     NProgress.start();

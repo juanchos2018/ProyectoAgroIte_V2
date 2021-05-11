@@ -3,14 +3,20 @@ import Vuex from 'vuex'
 import {
     encryptUser
 } from './components/shared/service/authService'
-
+import decode from 'jwt-decode'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
         cartProducts: [],
-        loggedUser: {}
+        loggedUser: {},
+        token: null,
+        usuario: null,
+        nombreUsuario:'',
+        idUsuario:''
+
     },
+
     getters: {
         cartProducts: state => {
             return state.cartProducts
@@ -34,6 +40,22 @@ export default new Vuex.Store({
             state.cartProducts = []
             state.cartProducts = products
         },
+        setToken(state,token){
+            state.token=token
+          },
+        setUsuario(state,nombreUsuario){
+            state.nombreUsuario=nombreUsuario
+          },
+         destroyToken(state) {
+            state.token = null
+          },
     },
-    actions: {}
+    actions: {
+
+        guardarToken({commit},token){
+            commit("setToken", token)
+            commit("setUsuario", decode(token))
+            localStorage.setItem("token", token)   
+          },
+    }
 })

@@ -55,7 +55,7 @@ namespace ProyectoAgroIte_V2.Controllers
             string rutaimguser = "";
             if (size == 0)
             {
-                rutaimguser = "";
+                rutaimguser = "nulo";
             }
             else
             {
@@ -71,7 +71,8 @@ namespace ProyectoAgroIte_V2.Controllers
                         }
                     }
                 }
-                rutaimguser = filePath;
+               // rutaimguser = filePath;
+                rutaimguser = "img/user/" + fileName;
             }
             usu.RutaFoto_Perfil = rutaimguser;
            

@@ -11,9 +11,9 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> Registrarse</a></li>
-                            <li><a href="#"><i class="fas fa-sign-in s_color"></i> Iniciar sesion</a></li>
-                            <li><a href="#"><i class="fas fa-sign-out s_color"></i> Salir</a></li>
+                            <li>  <router-link to="/registro" class="nav-link">Registrarse</router-link></li>
+                            <li>  <router-link to="/login" class="nav-link">Iniciar sesion</router-link></li>
+                            <li>  <a href="#"><i class="fas fa-sign-out s_color"></i> Salir</a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,16 +30,16 @@
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="../../assets/logo.png" class="logo" alt=""></a>
+                    </button>          
+                    <router-link to="/" class="nav-link"><img src="../../assets/logo.png" class="logo" alt=""></router-link>
                 </div>
              
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
+                        <li class="nav-item active"><router-link to="/" class="nav-link">Inicio</router-link></li>
+                        <li class="nav-item">   <router-link to="/nosotros" class="nav-link">Nosotros</router-link></li>
+                        <li class="dropdown">   
+                            <router-link to="/nosotros" class="nav-link">Tienda</router-link>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Sidebar Shop</a></li>
                                 <li><a href="#">Shop Detail</a></li>
@@ -102,7 +102,9 @@ export default {
     isLogged() {
     //  return isLoggedIn();
     },
-
+    Nosotros(){     
+          this.$router.push({name:"nosotros "});
+    },
     loc_logout() {
       localStorage.removeItem("_auth");
       this.$router.push("/");

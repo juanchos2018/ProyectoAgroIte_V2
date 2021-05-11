@@ -2,6 +2,7 @@
 using CEntidad;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CNegocio
@@ -30,6 +31,17 @@ namespace CNegocio
                 {
                     return e.InnerException.Message.ToString();
                 }
+            }
+        }
+
+        public Usuario GetLogin(Usuario Login)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Usuario
+                    .Where(d => d.Contraseña == Login.Contraseña)
+                    .Where(d => d.Alias == Login.Alias)                    
+                    .FirstOrDefault();
             }
         }
     }

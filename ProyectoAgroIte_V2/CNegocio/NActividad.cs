@@ -40,5 +40,16 @@ namespace CNegocio
                 }
             }
         }
+
+        public string GetActividad(int id)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Actividad
+                    .Where(d => d.IdActividad ==id)
+                    .Select(d => d.Nombre)
+                    .First();
+            }
+        }
     }
 }

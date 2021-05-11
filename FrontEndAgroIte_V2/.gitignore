@@ -19,6 +19,8 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-
+*.dll
+*.cache
+*.dll*
 # Config
 /server/mongo/configDummy.js

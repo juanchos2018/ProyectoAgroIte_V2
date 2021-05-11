@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t69mRUGbnNDIx/+x/7y6Uclpqk8xXeeSFms5BPH5Nka5nVws6y5WNc355bWlArmyqNcAPygFqL3eJHlvJS8mNg==",
+  "dgSpecHash": "NP9AtCKDpAVOz2lsKoY89PB+dDd2GX6p/iNqB8PsfX/mW0avgfPVq806bgV8WtSFiQCMkDOaL5LUYBGQ46Cqxw==",
   "success": true,
-  "projectFilePath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
+  "projectFilePath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.5\\microsoft.entityframeworkcore.5.0.5.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.5\\microsoft.entityframeworkcore.abstractions.5.0.5.nupkg.sha512",
