@@ -19,7 +19,7 @@ namespace CEntidad
         public decimal Precio_Referencial { get; set; }
 
        
-        public byte[] Imagenes_Producto { get; set; }
+        //public byte[] Imagenes_Producto { get; set; }
 
         public string RutaImagenes_Producto { get; set; }
 

@@ -19,6 +19,7 @@ namespace CDatos
         public virtual DbSet<UnidadVolumen> UnidadVolumen { get; set; }
 
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Producto> Producto { get; set; }
         //UnidadVolumen
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
@@ -44,6 +45,9 @@ namespace CDatos
 
             modelBuilder.Entity<Usuario>()
             .HasKey(c => new { c.IdUsuario,c.IdActividad });
+
+            modelBuilder.Entity<Producto>()
+          .HasKey(c => new { c.IdProducto,c.IdCategoria });
         }
     }
 }

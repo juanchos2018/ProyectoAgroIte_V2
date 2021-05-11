@@ -35,7 +35,9 @@
             name="usuario"
             @click="Ingresar"
           >
+           <b-spinner v-if="loanding" small type="grow"></b-spinner>
             Acceder
+          
           </button>
 
           <router-link to="/" class="btn btn-danger">Cancelar</router-link>
@@ -59,27 +61,33 @@ export default {
     };
   },
   created() {},
-  methods: {
-      Ingresar(){
-      if (this.alias == "") {
-        return;
-      }
-      this.loanding = true;
-      axios.post(this.RutaNetCore + "Auth/Login", {
-          Alias: this.alias,
-          Contraseña: this.password,
-        })
-        .then((respuesta) => {
-          return respuesta.data;
-        }).then((data) => {
-         // console.log(data);
-          this.$router.push({name:"menu"});
-          this.$store.dispatch("guardarToken", data.token);
-        })      
-        .catch((err) => {         
-          console.log(err);
-        });
-      }
-  },
+      methods: {
+          Ingresar(){
+          if (this.alias == "") {
+            return;
+          }
+          this.loanding = true;
+          axios.post(this.RutaNetCore + "Auth/Login", {
+              Alias: this.alias,
+              Contraseña: this.password,
+            })
+            .then((respuesta) => {
+              return respuesta.data;
+            }).then((data) => {
+              console.log(data)
+             this.loanding = false;
+              this.$router.push({name:"menu"});
+              this.$store.dispatch("guardarToken", data.token);
+            })      
+            .catch((err) => {         
+              console.log(err);
+                  this.loanding = false;
+                  this.noExiste()
+            });
+          },
+          noExiste(){
+          this.$swal.fire('No Existe su Usuario')
+         },
+     },
 };
 </script>

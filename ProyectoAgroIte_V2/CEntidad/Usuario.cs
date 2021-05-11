@@ -47,11 +47,11 @@ namespace CEntidad
         [StringLength(500)]
         public string Correo { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(500)]
         public string Alias { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(500)]
         public string Contraseña { get; set; }
 

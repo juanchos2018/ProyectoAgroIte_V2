@@ -9,7 +9,11 @@ import { BootstrapVue,VBHoverPlugin  } from 'bootstrap-vue'
 // require styles
 import "swiper/swiper.min.css";
 import "../node_modules/nprogress/nprogress.css";
+import VueSweetalert2 from 'vue-sweetalert2'; 
+import 'sweetalert2/dist/sweetalert2.min.css';
 
+
+Vue.use(VueSweetalert2);
 Vue.use(VueAwesomeSwiper);
 Vue.use(BootstrapVue);
 Vue.use(VBHoverPlugin)

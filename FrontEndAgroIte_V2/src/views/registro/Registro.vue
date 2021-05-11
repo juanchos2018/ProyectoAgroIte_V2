@@ -144,7 +144,9 @@
                 ></b-form-input>
             </b-form-group>
 
-             <b-button type="button" variant="primary" @click="Registar">Registrar</b-button>
+             <b-button type="button" variant="primary" @click="Registar">
+                  <b-spinner v-if="loanding" small type="grow"></b-spinner>
+                 Registrar</b-button>
 
         </div>
         <br>
@@ -175,6 +177,7 @@ export default {
         Descripcion:'',        
         files: [],
         url: null,
+        loanding: false,
    
       }
     },
@@ -199,6 +202,7 @@ export default {
             
          },
         Registar(){            
+               this.loanding = true;
                 let data = new FormData();                
                 for( var i = 0; i < this.files.length; i++ ){
                         let file = this.files[i];
@@ -225,12 +229,13 @@ export default {
                         console.log(response);
                    
                         if (response.status==200){
-                          alert("Registrado")
-                        }                           
+                          this.Confirmacion(response.data.Mensaje);
+                        }      
+                             this.loanding = false;                     
                 }) .catch(function(error){
-                    console.log(error)
-                       
-                    console.log('Error!');
+                    console.log(error)                       
+                   
+                     this.loanding = false;
             });
        },
       ListarActividad(){
@@ -245,7 +250,17 @@ export default {
             }).catch(function(error){
                 console.log(error);
             });
-      }
+      },
+        Confirmacion(mensaje){
+          this.$swal({
+              position: 'top-end',
+              icon: 'success',
+              title: mensaje,
+              text:'texto',
+              showConfirmButton: false,
+              timer: 3000
+              })
+       },
     
     }
   }
