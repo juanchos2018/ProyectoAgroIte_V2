@@ -51,6 +51,8 @@
 
 <script>
 import axios from "axios";
+import Vue from 'vue';
+Vue.prototype.$eventHub = new Vue();
 export default {
   name: "login",
   data() {
@@ -73,11 +75,15 @@ export default {
             })
             .then((respuesta) => {
               return respuesta.data;
-            }).then((data) => {
-              console.log(data)
-             this.loanding = false;
-              this.$router.push({name:"menu"});
+            }).then((data) => {                       
+              this.loanding = false;              
+              this.$eventHub.$emit('Ocultar')            
               this.$store.dispatch("guardarToken", data.token);
+              this.$session.start();
+              let dataa = {etiquetaSalir:true,etiquetaIniciar:false,etiquetaNombre:true}
+              this.$store.commit('EstadoLogueado', dataa);
+              this.$router.push({name:"menu"});  
+
             })      
             .catch((err) => {         
               console.log(err);

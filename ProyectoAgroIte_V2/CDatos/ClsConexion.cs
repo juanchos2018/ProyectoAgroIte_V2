@@ -25,14 +25,14 @@ namespace CDatos
         {
            
             //string connectionString = @"Data Source=" + Parametros.pc_Servidor + ";Initial Catalog=" + Parametros.pc_BaseDatos + ";User Id=" + Parametros.pc_Usuario + ";Password=" + Parametros.pc_Contrasena;
-            string connectionString = @"server=" + Parametros.pc_Servidor + ";port=3306;user =" + Parametros.pc_Usuario + ";Password=" + Parametros.pc_Contrasena+";database="+Parametros.pc_BaseDatos;
+            string connectionString = @"server=" + Parametros.pc_Servidor + ";port=3307;user =" + Parametros.pc_Usuario + ";Password=" + Parametros.pc_Contrasena+";database="+Parametros.pc_BaseDatos;
             optionBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // multi key
-            modelBuilder.Entity<Actividad>()
-                .HasKey(c => new { c.IdActividad, });
+           // multi key
+             modelBuilder.Entity<Actividad>()
+                 .HasKey(c => new { c.IdActividad, });
 
             modelBuilder.Entity<Categoria>()
                .HasKey(c => new { c.IdCategoria, });
@@ -44,10 +44,13 @@ namespace CDatos
              .HasKey(c => new { c.IdUnidadVolumen, });
 
             modelBuilder.Entity<Usuario>()
-            .HasKey(c => new { c.IdUsuario,c.IdActividad });
+            .HasKey(c => new { c.IdUsuario, c.IdActividad });
 
             modelBuilder.Entity<Producto>()
-          .HasKey(c => new { c.IdProducto,c.IdCategoria });
+           .HasKey(c => new { c.IdProducto,c.IdCategoria, });
+
+
+
         }
     }
 }

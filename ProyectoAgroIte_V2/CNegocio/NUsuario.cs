@@ -1,5 +1,6 @@
 ﻿using CDatos;
 using CEntidad;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,29 @@ namespace CNegocio
                     .Where(d => d.Contraseña == Login.Contraseña)
                     .Where(d => d.Alias == Login.Alias)                    
                     .FirstOrDefault();
+            }
+        }
+        public Usuario GetUser(Usuario user)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Usuario
+                    .Where(d => d.IdUsuario == user.IdUsuario)
+                    .FirstOrDefault();
+            }
+        }
+
+        public Usuario UpdatePhoto(Usuario c)
+        {
+            using (var db = new ClsConexion())
+            {
+                var resul = db.Usuario
+                    .Where(d => d.IdUsuario==c.IdUsuario)
+                    .FirstOrDefault();
+
+                resul.RutaFoto_Perfil = c.RutaFoto_Perfil;               
+                db.SaveChanges();
+                return resul;
             }
         }
     }

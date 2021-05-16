@@ -110,7 +110,7 @@ namespace ProyectoAgroIte_V2.Controllers
         public JsonResult GetProductosAll()
         {           
             NProducto producs = new NProducto();
-            var query = producs.GetProductosAll();
+            var query = producs.GetProductosAll2();
             return Json(query);
         }
     }

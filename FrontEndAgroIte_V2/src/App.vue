@@ -1,58 +1,32 @@
 <template>
-  <div id="app" >   
+  <div  >   
       <Heder></Heder>
       <router-view />   
+      <br>
     <footer1></footer1>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+
 import Heder from  '@/components/header/Heder'
 
 import footer1 from  '@/components/footer/footer'
-import {   isLoggedIn,  getLoggedInUser,} from "./components/shared/service/authService";
-export default {
 
+export default {
   components:{Heder,footer1},
   data() {
     return {
       cartValue: 0,
     };
   },
-  computed: mapState(["cartProducts", "loggedUser"]),
+ 
   methods: {
-    /* Initially loading the cart products from local storage */
-
-    ...mapMutations(["SET_CART_PRODUCTS", "ADD_LOGGED_USER"]),
-
-    getLocalProducts() {
-      const products = JSON.parse(localStorage.getItem("iki-cart"));
-
-      if (products) {
-        this.SET_CART_PRODUCTS(products);
-      }
-    },
-
-    isLogged() {
-      return isLoggedIn();
-    },
-
-    loc_logout() {
-      localStorage.removeItem("_auth");
-      this.$router.push("/");
-      location.reload();
-    },
+    /* Initially loading the cart products from local storage */   
+   
   },
   created() {
-    this.getLocalProducts();
-
-    const loggedUser = getLoggedInUser();
-
-    this.ADD_LOGGED_USER(loggedUser);
-
-    console.log(process.env.NODE_ENV);
-    console.log(process.env.VUE_APP_BASE_URL);
+   
   },
 };
 </script>

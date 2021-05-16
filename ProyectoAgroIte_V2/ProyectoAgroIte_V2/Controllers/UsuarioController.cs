@@ -30,7 +30,6 @@ namespace ProyectoAgroIte_V2.Controllers
 
 
         [Route("Usuario/SetUsuario")]
-
         //public IActionResult SubirArchivos(IFormCollection UploadedFiles)
         public IActionResult Guardar(IFormCollection UploadedFiles)
         {
@@ -55,7 +54,7 @@ namespace ProyectoAgroIte_V2.Controllers
             string rutaimguser = "";
             if (size == 0)
             {
-                rutaimguser = "nulo";
+                rutaimguser = "img/user/default_user.png";
             }
             else
             {
@@ -74,8 +73,7 @@ namespace ProyectoAgroIte_V2.Controllers
                // rutaimguser = filePath;
                 rutaimguser = "img/user/" + fileName;
             }
-            usu.RutaFoto_Perfil = rutaimguser;
-           
+            usu.RutaFoto_Perfil = rutaimguser;           
             NUsuario nusuario = new NUsuario();
 
             try
@@ -99,6 +97,64 @@ namespace ProyectoAgroIte_V2.Controllers
             {
                 return Json(e);
             }
+        }
+
+        [Route("Usuario/GetUsuario")]
+        public JsonResult GetId([FromBody] Usuario d)
+        {
+            NUsuario nusuario = new NUsuario();
+            return Json(nusuario.GetUser(d));
+        }
+
+        [Route("Usuario/SetPhoto")]
+        public JsonResult SetPhoto(IFormCollection UploadedFiles)
+        {
+            NUsuario nusuario = new NUsuario();
+            Usuario usu = new Usuario();
+
+            usu.IdUsuario = int.Parse( UploadedFiles["IdUsuario"].ToString());
+            usu = nusuario.GetUser(usu);
+            string imgactual = usu.RutaFoto_Perfil;
+            string filePath = "";
+            string ruta = Path.Combine(_env.WebRootPath, "img/user");
+            long size = UploadedFiles.Files.Sum(f => f.Length);
+            string fileName = "";
+            string rutaimguser = "";
+            if (size == 0)
+            {
+                rutaimguser = "img/user/default_user.png";
+            }
+            else
+            {               
+                string[] arrayruta = imgactual.Split("/");
+                if (arrayruta[2].ToString() != "default_user.png")
+                {
+                    System.IO.File.Delete(Path.Combine(_env.WebRootPath, imgactual));
+                }                             
+                foreach (var formFile in UploadedFiles.Files)
+                {
+                    if (formFile.Length > 0)
+                    {
+                        fileName = usu.Num_Identificacion + "-" + formFile.FileName;
+                        filePath = Path.Combine(ruta, fileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            formFile.CopyTo(fileStream);
+                        }
+                    }
+                }               
+                rutaimguser = "img/user/" + fileName;
+            }
+            usu.RutaFoto_Perfil = rutaimguser;
+            var data= nusuario.UpdatePhoto(usu);
+            var salida = new
+            {
+                estado = "OK",
+                msg = "Datos Actualizados",
+                img= rutaimguser
+
+            };
+            return Json(salida);
         }
     }
 }

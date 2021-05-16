@@ -1,368 +1,651 @@
 <template>
-    <div class="">
-
-        <b-container class="bv-example-row">           
-        <b-row >
-           <!--   <div  class="d-md-none" >
+  <div class="">
+    <b-container class="bv-example-row">
+      <b-row>
+        <!--   <div  class="d-md-none" >
                 <b-button-group>
                 <b-button>Button 1</b-button>
                 <b-button>Button 2</b-button>
                 <b-button>Button 3</b-button>
                 </b-button-group>
             </div> -->
-            <div class="d-md-down-none">            
-            <b-card >
-           <b-list-group>
-                 <center>
-                 <img src="https://placekitten.com/300/300" class="img1" alt="Avatar">
-                 </center>
-              <br>
-             <b-list-group-item href="#" class="flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Agregar Productos</h5>
-        <small>3 days ago</small>
-        </div>
-        <b-button variant="outline-primary" style="float:right" @click="MostrarAgregarProducto" >Mostrar</b-button>    
-     </b-list-group-item>
+        <div class="d-md-down-none">
+          <b-card>
+            <b-list-group>
+              <center>
+                <img
+                  :src="ApiRutaNetCore + RutaMIFoto"
+                  class="img1"
+                  alt="Avatar"
+               
+                /><br />
+                <br />
+                <h5>{{ NombreUsuario }}</h5>
+                 <b-spinner variant="primary" v-if="loanding" label="Spinning"></b-spinner>
+                    <div >
+                   
+                   <!-- <input
+                      type="file"
+                      id="files"
+                      ref="files"
+                      name="myfile"
+                      v-on:change="handleFileUploads"
+                    />-->
+                      <label data-v-3a42fd9f="" data-v-10d1d8f2="" label="file" class="button file-input">
+            <svg data-v-3a42fd9f="" width="30px" height="30px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload-cloud">
+            <polyline data-v-3a42fd9f="" points="16 16 12 12 8 16">
+              </polyline>
+              <line data-v-3a42fd9f="" x1="12" y1="12" x2="12" y2="21"></line>
+              <path data-v-3a42fd9f="" d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+              <polyline data-v-3a42fd9f="" points="16 16 12 12 8 16"></polyline></svg>
+                <input data-v-3a42fd9f="" id="file2" type="file"   ref="file2"  @change="EditPhoto" style="display: none;">          
+          </label>   
+                  </div>
+              </center>
+              <br />
+              <b-list-group-item href="#" class="flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Agregar Productos</h5>
+                   
+                  <small>3 days ago</small>
+                </div>
+                <b-button
+                  variant="outline-primary"
+                  style="float:right"
+                  @click="MostrarAgregarProducto"
+                  >Mostrar</b-button
+                >
+              </b-list-group-item>
 
-    <b-list-group-item href="#" class="flex-column align-items-start" >
-        <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Mis Productos</h5>
-        <small class="text-muted">3 days ago</small>
-        </div>
-        <b-button variant="outline-primary" style="float:right" @click="MosrarMisProductos" >Mostrar</b-button>    
-    </b-list-group-item>
+              <b-list-group-item href="#" class="flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Mis Productos</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <b-button
+                  variant="outline-primary"
+                  style="float:right"
+                  @click="MosrarMisProductos"
+                  >Mostrar</b-button
+                >
+              </b-list-group-item>
 
-    <b-list-group-item href="#"  class="flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Disabled List group item</h5>
-        <small class="text-muted">3 days ago</small>
+              <b-list-group-item href="#" class="flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Mis Datos</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <b-button variant="outline-primary" style="float:right"
+                @click="MostrarMiPerfil"  >Mostrar</b-button
+                >
+              </b-list-group-item>
+            </b-list-group>
+          </b-card>
         </div>
-  <b-button variant="outline-primary" style="float:right" >Button</b-button>
-    </b-list-group-item>
-    </b-list-group>
-            </b-card>
-            </div>
-            <b-col>
-                <div v-if="MisProductos">
-                      <div class="row my-4">
-            <div class="col-12">
+        <b-col>
+          <div v-if="MisProductos">
+            <div class="row my-4">
+              <div class="col-12">
                 <h2 class="noo-sh-title">Mis Productos</h2>
-            </div>           
-                <div class="col-sm-6 col-lg-3" v-for="item in itemMisProductos" :key="item.key">
-                    <div class="hover-team">
-                        <div class="our-team">
-                         
-                     <img   v-bind:src="ApiRutaNetCore + item.rutaImagenes_Producto"  style="height:200px;">
-                            <div class="team-content">
-                                <h3 class="title"><b><i class="fa fa-fire"></i>&nbsp; {{item.nombre_Producto}}</b></h3> <span class="post">item.Categoria.Nombre</span>
-                            </div>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class=" fa fa-edit"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="fa fa-trash"></a>
-                                </li>
-
-
-                            </ul>
-                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
-                        </div>
-                        <div class="team-description">
-                            <p><b>&nbsp;{{item.Descripcion_Producto}}</b></p>
-                        </div>
-                        <hr class="my-0">
+              </div>
+              <div
+                class="col-sm-6 col-lg-3"
+                v-for="item in itemMisProductos"
+                :key="item.key"
+              >
+                <div class="hover-team">
+                  <div class="our-team">
+                    <img
+                      v-bind:src="ApiRutaNetCore + item.rutaImagen"
+                      style="height:200px;"
+                    />
+                    <div class="team-content">
+                      <h3 class="title">
+                        <b
+                          ><i class="fa fa-fire"></i>&nbsp;
+                          {{ item.nombre_Producto }}</b
+                        >
+                      </h3>
+                      <span class="post">item.Categoria.Nombre</span>
                     </div>
+                    <ul class="social">
+                      <li>
+                        <a href="#" class=" fa fa-edit"></a>
+                      </li>
+                      <li>
+                        <a href="#" class="fa fa-trash"></a>
+                      </li>
+                    </ul>
+                    <div class="icon">
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="team-description">
+                    <p>
+                      <b>&nbsp;{{ item.Descripcion_Producto }}</b>
+                    </p>
+                  </div>
+                  <hr class="my-0" />
                 </div>
-            
-        </div>                 
-                </div>
-                <div v-if="AgregarProducto">
-                    <b-card>
-                    <div class="form-row">
-            <b-form-group      
-                label="Categoria:"      
-                class="col-md-4"               
-            >
-               <b-form-select      
-                 :options="itemCategorias"  
-                 v-model="IdCategoria"      
-                id="inline-form-custom-select-pref"
-                class="mb-2 mr-sm-2 mb-sm-0"              
-                ></b-form-select>
-            </b-form-group>
+              </div>
+            </div>
+          </div>
 
-            <b-form-group 
-                label="Nombre de Producto:" 
-                class="col-md-8" >
-                <b-form-input        
-                   v-model="Nombre_Producto"
+          <div v-if="AgregarProducto">
+            <b-card>
+              <div class="col-12">
+                <h4 class="noo-sh-title">Agregar Producto</h4>
+              </div>
+              <div class="form-row">
+                <b-form-group label="Categoria:" class="col-md-4">
+                  <b-form-select
+                    :options="itemCategorias"
+                    v-model="IdCategoria"
+                    id="inline-form-custom-select-pref"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                  ></b-form-select>
+                </b-form-group>
+
+                <b-form-group label="Nombre de Producto:" class="col-md-8">
+                  <b-form-input
+                    v-model="Nombre_Producto"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </div>
+              <div class="form-row">
+                <b-form-group label="Precio:" class="col-md-4">
+                  <b-form-input
+                    type="number"
+                    v-model="Precio_Referencial"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+                <b-form-group label="Descropcion Producto:" class="col-md-8">
+                  <b-form-input
+                    type="text"
+                    v-model="Descripcion_Producto"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </div>
+
+              <div class="form-row">
+                <b-form-group label="Cantidad Producida:" class="col-md-4">
+                  <b-form-input
+                    type="number"
+                    v-model="Cantidad_Producida"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+                <b-form-group label="Fecha Inicio:" class="col-md-4">
+                  <b-form-input
+                    type="date"
+                    v-model="Fecha_Inicio"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+
+                <b-form-group label="Fecha Fin:" class="col-md-4">
+                  <b-form-input
+                    type="date"
+                    v-model="Fecha_Fin"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </div>
+
+              <div class="form-row">
+                <b-form-group label="Unidad Medioda:" class="col-md-4">
+                  <b-form-select
+                    :options="itemUnidadVolumen"
+                    v-model="IdUnidad_Volumen"
+                    id="inline-form-custom-select-pref"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                  ></b-form-select>
+                </b-form-group>
+                <b-form-group label="Frecuenca:" class="col-md-4">
+                  <b-form-select
+                    :options="itemFrecuecia"
+                    v-model="Idfrecuencia"
+                    id="inline-form-custom-select-pref"
+                    class="mb-2 mr-sm-2 mb-sm-0"
+                  ></b-form-select>
+                </b-form-group>
+                <b-form-group label="imagen:" class="col-md-4">
+                  <div class="upload-btn-wrapper">
+                    <button class="btn1">Imagen</button>
+                    <input
+                      type="file"
+                      id="files"
+                      ref="files"
+                      name="myfile"
+                      v-on:change="handleFileUploads"
+                    />
+                  </div>
+                </b-form-group>
+              </div>
+              <b-button
+                type="button"
+                variant="primary"
+                @click="RegistrarProducto"
+              >
+                <b-spinner v-if="loanding" small type="grow"></b-spinner>
+                Registrar</b-button
+              >
+            </b-card>
+          </div>
+
+          <div v-if="VerMiPerfil">
+               <div class="col-12">
+                   <br>
+                <h2 class="noo-sh-title">Mis Datos</h2>
+              </div>
+            <div class="form-row">
+              <b-form-group label="Nombre:" class="col-md-4">
+                <b-form-input
+                  v-model="Nombres"
+                  type="text"
                   required
                 ></b-form-input>
-            </b-form-group>            
-        </div>
-         <div class="form-row">  
-            <b-form-group      
-                label="Precio:"      
-                class="col-md-4"               
-            >
-                <b-form-input   
-                type="number"      
-                v-model="Precio_Referencial"
-                required
-                ></b-form-input>
-            </b-form-group>
-            <b-form-group      
-                label="Descropcion Producto:"      
-                class="col-md-8"               
-               >
-                <b-form-input   
-                type="text"      
-                v-model="Descripcion_Producto"
-                required
-                ></b-form-input>
-            </b-form-group>
-        </div>
+              </b-form-group>
 
-        <div class="form-row">
-            <b-form-group      
-                label="Cantidad Producida:"      
-                class="col-md-4"              
-            >
-                <b-form-input      
-                  type="number"  
-                  v-model="Cantidad_Producida" 
-                   required
-                ></b-form-input>
-            </b-form-group>
- <b-form-group 
-                label="Fecha Inicio:" 
-                class="col-md-4" >
-              <b-form-input   
-                type="date"      
-                v-model="Fecha_Inicio"
-                required
-                ></b-form-input>
-            </b-form-group>
-           
+              <b-form-group label="Apellido:" class="col-md-4">
+                <b-form-input v-model="Apellidos" required></b-form-input>
+              </b-form-group>
 
-                <b-form-group      
-                label="Fecha Fin:"      
-                class="col-md-4"
-            
-            >
-                  <b-form-input   
-                type="date"      
-                v-model="Fecha_Fin"
-                required
+              <b-form-group label="Correo:" class="col-md-4">
+                <b-form-input
+                  v-model="Correo"
+                  type="email"
+                  required
                 ></b-form-input>
-            </b-form-group>
-            
-        </div>
-
-        <div class="form-row">
-           <b-form-group 
-                label="Unidad Medioda:" 
-                class="col-md-4" >
-                   <b-form-select         
-                    :options="itemUnidadVolumen"   
-                    v-model="IdUnidad_Volumen"   
-                    id="inline-form-custom-select-pref"
-                    class="mb-2 mr-sm-2 mb-sm-0"              
-                ></b-form-select>
-            </b-form-group>
-             <b-form-group      
-                label="Frecuenca:"      
-                class="col-md-4"
-                
-            >
-             <b-form-select        
-               :options="itemFrecuecia"   
-                v-model="Idfrecuencia"       
-                id="inline-form-custom-select-pref"
-                class="mb-2 mr-sm-2 mb-sm-0"              
-                ></b-form-select>
-            </b-form-group>   
-            <b-form-group 
-                label="iamgen:" 
-                class="col-md-4" >
-               <div class="upload-btn-wrapper">
-            <button class="btn1">Imagen</button>
-            <input type="file"  id="files" ref="files" name="myfile" v-on:change="handleFileUploads"  />
+              </b-form-group>
             </div>
-            </b-form-group>  
 
-                  </div>
-                         <b-button type="button" variant="primary" @click="RegistrarProducto">
-                               <b-spinner v-if="loanding" small type="grow"></b-spinner>
-                             Registrar</b-button>
-                    </b-card>                  
-                </div>
-            </b-col>
-        
-        </b-row>
+            <div class="form-row">
+              <b-form-group label="Direccion:" class="col-md-4">
+                <b-form-input
+                  v-model="Direccion"
+                  type="text"
+                  required
+                ></b-form-input>
+              </b-form-group>
+
+              <b-form-group label="Actividad:" class="col-md-2">
+                <b-form-input
+                  v-model="Actividad"
+                  type="email"
+                  required
+                ></b-form-input>
+              </b-form-group>
+
+              <b-form-group label="Tipo Documeto:" class="col-md-2">
+                <b-form-select
+                  :options="itemTipoDocumento"
+                  v-model="Tipo_Documento"
+                  class="mb-2 mr-sm-2 mb-sm-0"
+                ></b-form-select>
+              </b-form-group>
+              <b-form-group label="Numero Documento:" class="col-md-4">
+                <b-form-input
+                  type="text"
+                  v-model="Num_Identificacion"
+                  required
+                ></b-form-input>
+              </b-form-group>
+            </div>
+
+            <div class="form-row">
+             
+              <b-form-group label="Usuario:" class="col-md-4">
+                <b-form-input
+                  v-model="Alias"
+                  type="text"
+                  required
+                ></b-form-input>
+              </b-form-group>
+              <b-form-group label="Contraseña:" class="col-md-4">
+                <b-form-input
+                  v-model="Contrasena"
+                  type="password"
+                  required
+                ></b-form-input>
+              </b-form-group>
+            </div>
+
+            <div class="form-row">
+              <b-form-group label="Celular:" class="col-md-4">
+                <b-form-input
+                  v-model="Celular"
+                  type="number"
+                  required
+                ></b-form-input>
+              </b-form-group>
+
+              <b-form-group label="Organizacion:" class="col-md-4">
+                <b-form-input
+                  v-model="Organizacion"
+                  type="text"
+                  required
+                ></b-form-input>
+              </b-form-group>
+            </div>
+            <b-button type="button" variant="primary" @click="Editar">
+              <b-spinner v-if="loanding" small type="grow"></b-spinner>
+              Guardar</b-button
+            >
+            
+          </div>
+        </b-col>
+      </b-row>
     </b-container>
-
-  
-    </div>
+  </div>
 </template>
 <script>
 import axios from "axios";
+import decode from "jwt-decode";
 
 export default {
-    
-    data() {
-        return{ 
-            MisProductos:false,
-            AgregarProducto:true,
-            itemCategorias:[],
-            itemUnidadVolumen:[],
-            itemFrecuecia:[],
-            itemMisProductos:[],
-            IdCategoria:'',
-            Nombre_Producto:'',
-            Precio_Referencial:'',
-            Descripcion_Producto:'',
-            Fecha_Inicio:'',
-            Fecha_Fin:'',
-            Cantidad_Producida:'',
-            IdUnidad_Volumen:'',
-            Idfrecuencia:'',
-            IdUsuario:16,
-            files: [],
-            url: null,
-            loanding: false,
-            ApiRutaNetCore:'',
-        }
-    },
-    created() {
-        this.ListarCategorias();
-        this.ListarUnidadVolumen();
-        this.ListarFrecuencia();
-        this.ApiRutaNetCore=this.RutaNetCore;
-    },
-    methods: {
-        MosrarMisProductos(){
-            this.MisProductos=true;
-            this.AgregarProducto=false;
-            this.ListarMisProductos();
-        },
-        MostrarAgregarProducto(){
-            this.MisProductos=false;
-            this.AgregarProducto=true;
-        },
-        MostrarMiPerfil(){
+  data() {
+    return {
+      MisProductos: false,
+      AgregarProducto: true,
+      VerMiPerfil: false,
+      itemCategorias: [],
+      itemUnidadVolumen: [],
+      itemFrecuecia: [],
+      itemMisProductos: [],
+      IdCategoria: "",
+      Nombre_Producto: "",
+      Precio_Referencial: "",
+      Descripcion_Producto: "",
+      Fecha_Inicio: "",
+      Fecha_Fin: "",
+      Cantidad_Producida: "",
+      IdUnidad_Volumen: "",
+      Idfrecuencia: "",
+      IdUsuario: null,
+      files: [],
+      file: "",
+      url: null,
+      loanding: false,
+      ApiRutaNetCore: "",
+      NombreUsuario: "",
+      Token: "",
+      RutaMIFoto: "",
+      DatosUsuario: "",
+      //datos user
+      itemTipoDocumento: [],
+      itemActividad: [],
+      Actividad:'',
+      Nombres:'',
+      Apellidos: "",
+      Tipo_Documento: "",
+      Num_Identificacion: "",
+      Celular: "",
+      Direccion: "",
+      Correo: "",
+      IdActividad: "",
+      Alias: "",
+      Contrasena: "",
+      Organizacion: "",
+      Descripcion: "",
+   
+    };
+  },
+  created() {
+    this.ListarCategorias();
+    this.ListarUnidadVolumen();
+    this.ListarFrecuencia();
+    this.ListarActividad();
+    this.Documentos();
 
-        },
-        ListarCategorias(){
-               let me=this;
-               var cate=[];
-               axios.get(this.RutaNetCore+'Categoria/GetCategoria').then(response => { 
-               cate=response.data; 
-               cate.map(function(x){
-                    me.itemCategorias.push({text: x.nombre,value:x.idCategoria});
-                });  
-            }).catch(function(error){
-                console.log(error);
-            });
-        },
-        ListarUnidadVolumen(){
-               let me=this;
-               var uni=[];
-               axios.get(this.RutaNetCore+'UnidadVolumen/GetUnidadVolumen').then(response => { 
-               uni=response.data; 
-               uni.map(function(x){
-                    me.itemUnidadVolumen.push({text: x.nombre,value:x.idUnidadVolumen});
-                });  
-            }).catch(function(error){
-                console.log(error);
-            });
-        },
-        ListarFrecuencia(){
-                let me=this;
-               var uni=[];
-               axios.get(this.RutaNetCore+'Frecuencia/GetFrecuencia').then(response => { 
-               uni=response.data; 
-               uni.map(function(x){
-                    me.itemFrecuecia.push({text: x.nombre,value:x.idfrecuencia});
-                });  
-            }).catch(function(error){
-                console.log(error);
-            });
-        
-        },
-        ListarMisProductos(){
-               let me=this;              
-                let Usuario={
-                 IdUsuario:this.IdUsuario
-                }
-               axios.post(this.RutaNetCore+'Producto/GetMyProducto',Usuario,{ emulateJSON: true}).then(response => { 
-                 console.log(response.data)
-                me.itemMisProductos=response.data;                 
-            }).catch(function(error){
-                console.log(error);
-            });
-        },
-        handleFileUploads(e){
-                this.files = this.$refs.files.files;
-                const file = e.target.files[0];                
-                this.url = URL.createObjectURL(file);            
-         },
-        RegistrarProducto(){
-               this.loanding=true;
-                let data = new FormData();                
-                for( var i = 0; i < this.files.length; i++ ){
-                        let file = this.files[i];
-                        data.append('files[' + i + ']', file);
-                }
-                data.append('IdCategoria', this.IdCategoria)
-                data.append('Nombre_Producto',this.Nombre_Producto)
-                data.append('Precio_Referencial',this.Precio_Referencial)
-                data.append('Descripcion_Producto',this.Descripcion_Producto)
-                data.append('Fecha_Inicio',this.Fecha_Inicio)
-                data.append('Fecha_Fin',this.Fecha_Fin)
-                data.append('Cantidad_Producida',this.Cantidad_Producida)
-                data.append('IdUnidad_Volumen',this.IdUnidad_Volumen)
-                data.append('Idfrecuencia',this.Idfrecuencia)
-                data.append('IdUsuario',this.IdUsuario)
-            
-                let config = {
-                    header : {
-                            'Content-Type' : 'multipart/form-data'
-                    }
-                }
-                axios.post(this.RutaNetCore+'Producto/SetProducto', data, config).then(response => {
-                        console.log(response);
-                   
-                        if (response.status==200){
-                          this.Confirmacion(response.data.Mensaje);
-                        }         
-                          this.loanding=false;                  
-                }) .catch(function(error){
-                    console.log(error)
-                         this.loanding=false;
-                   
-            });
-        },
-        Confirmacion(mensaje){
-          this.$swal({
-              position: 'top-end',
-              icon: 'success',
-              title: mensaje,
-              text:'texto',
-              showConfirmButton: false,
-              timer: 3000
+    this.ApiRutaNetCore = this.RutaNetCore;
+  },
+  mounted() {
+    if (localStorage.token) this.Token = localStorage.token;
+    this.datosUsuario = decode(this.Token);
+   
+    this.NombreUsuario = this.datosUsuario.Nombre;
+    this.RutaMIFoto = this.datosUsuario.Img;
+    this.IdUsuario=this.datosUsuario.Id
+  },
+  methods: {
+    MosrarMisProductos() {
+      this.MisProductos = true;
+      this.VerMiPerfil = false;
+      this.AgregarProducto = false;
+      this.ListarMisProductos();
+    },
+    MostrarAgregarProducto() {
+      this.MisProductos = false;
+      this.VerMiPerfil = false;
+      this.AgregarProducto = true;
+    },
+    MostrarMiPerfil() {
+       this.MisProductos = false;
+       this.AgregarProducto = false;
+       this.VerMiPerfil = true;
+       this.MisDatosPerosnales();
+    }, 
+    MisDatosPerosnales(){
+          let me = this;          
+         axios({
+              method: 'post',
+              url: this.RutaNetCore+'Usuario/GetUsuario',
+              data: {
+                IdUsuario:parseInt(me.IdUsuario),               
+              }
+          })
+          .then(response => {                        
+                me.Correo=response.data.correo; 
+                me.Nombres=response.data.nombres  
+                me.Apellidos=response.data.apellidos  
+                me.Celular=response.data.celular    
+                me.Alias=response.data.alias     
+                me.Direccion=response.data.direccion       
+                me.Num_Identificacion=response.data.num_Identificacion
+
+                let objIndex = me.itemActividad.findIndex(obj=> obj.value ==response.data.idActividad);
+                me.Actividad= me.itemActividad[objIndex].text;
+                me.Tipo_Documento=response.data.tipo_Documento
+                me.Organizacion=response.data.organizacion
+              })  
+    },
+    Editar(){
+        let me = this;
+        let data={IdUsuario:parseInt( me.IdUsuario)}
+        axios
+        .post(this.RutaNetCore + "Usuario/GetUsuario",data)
+        .then((response) => {
+          console.log(response.data);
+         
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    EditPhoto(){
+              this.loanding = true;
+              this.file = this.$refs.file2.files[0];
+              //this.path = URL.createObjectURL(this.$refs.file.files[0]);
+              let formData = new FormData();
+              formData.append('file', this.file);
+              formData.append('IdUsuario', parseInt(this.IdUsuario));                         
+              axios.post(this.RutaNetCore + 'Usuario/SetPhoto', formData,
+                 {
+                  headers: {
+                    'Content-Type': 'multipart/form-data'
+                  }
               })
-       },
-    }
-}
+              .then(function (response) {
+                  this.loanding = false;
+                  if(!response.data){
+                    alert('File not uploaded.');                    
+                  }else{
+                    this.Mensaje();
+                   }             
+              })
+              .catch(function (error) {
+                  console.log(error);
+                  this.loanding = false;
+              });
+    },
+    ListarCategorias() {
+      let me = this;
+      var cate = [];
+      axios
+        .get(this.RutaNetCore + "Categoria/GetCategoria")
+        .then((response) => {
+          cate = response.data;
+          cate.map(function(x) {
+            me.itemCategorias.push({ text: x.nombre, value: x.idCategoria });
+          });
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    ListarUnidadVolumen() {
+      let me = this;
+      var uni = [];
+      axios
+        .get(this.RutaNetCore + "UnidadVolumen/GetUnidadVolumen")
+        .then((response) => {
+          uni = response.data;
+          uni.map(function(x) {
+            me.itemUnidadVolumen.push({
+              text: x.nombre,
+              value: x.idUnidadVolumen,
+            });
+          });
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    ListarFrecuencia() {
+      let me = this;
+      var uni = [];
+      axios
+        .get(this.RutaNetCore + "Frecuencia/GetFrecuencia")
+        .then((response) => {
+          uni = response.data;
+          uni.map(function(x) {
+            me.itemFrecuecia.push({ text: x.nombre, value: x.idfrecuencia });
+          });
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    ListarMisProductos() {
+      let me = this;
+      let Usuario = {
+        IdUsuario:parseInt( me.IdUsuario),
+      };
+      axios
+        .post(this.RutaNetCore + "Producto/GetMyProducto", Usuario, {
+          emulateJSON: true,
+        })
+        .then((response) => {
+         
+          me.itemMisProductos = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    handleFileUploads(e) {
+      this.files = this.$refs.files.files;
+      const file = e.target.files[0];
+      this.url = URL.createObjectURL(file);
+    },
+    RegistrarProducto() {
+      this.loanding = true;
+      let data = new FormData();
+      for (var i = 0; i < this.files.length; i++) {
+        let file = this.files[i];
+        data.append("files[" + i + "]", file);
+      }
+      data.append("IdCategoria", this.IdCategoria);
+      data.append("Nombre_Producto", this.Nombre_Producto);
+      data.append("Precio_Referencial", this.Precio_Referencial);
+      data.append("Descripcion_Producto", this.Descripcion_Producto);
+      data.append("Fecha_Inicio", this.Fecha_Inicio);
+      data.append("Fecha_Fin", this.Fecha_Fin);
+      data.append("Cantidad_Producida", this.Cantidad_Producida);
+      data.append("IdUnidad_Volumen", this.IdUnidad_Volumen);
+      data.append("Idfrecuencia", this.Idfrecuencia);
+      data.append("IdUsuario", this.IdUsuario);
+
+      let config = {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
+      axios
+        .post(this.RutaNetCore + "Producto/SetProducto", data, config)
+        .then((response) => {       
+          if (response.status == 200) {
+            this.Confirmacion(response.data.Mensaje);
+          }
+          this.loanding = false;
+        })
+        .catch(function(error) {
+          console.log(error);
+          this.loanding = false;
+        });
+    },
+    Confirmacion(mensaje) {
+      this.$swal({
+        position: "top-end",
+        icon: "success",
+        title: mensaje,
+        text: "texto",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+    },
+    Mensaje(){
+        this.$Swal.fire('Modificado Imagen')
+    },
+    Documentos() {
+      var Tipo_Documento = 0;
+      var nombreDocumento = "Dni";
+      var Tipo_Documento2 = 1;
+      var nombreDocumento2 = "Ruc";
+      this.itemTipoDocumento.push(
+        { text: nombreDocumento, value: Tipo_Documento },
+        { text: nombreDocumento2, value: Tipo_Documento2 }
+      );
+    },
+    ListarActividad() {
+      let me = this;
+      var actividad = [];
+      axios
+        .get(this.RutaNetCore + "Actividad/GetActividad")
+        .then((response) => {
+        
+          actividad = response.data;
+          actividad.map(function(x) {
+            me.itemActividad.push({ text: x.nombre, value: x.idActividad });
+          });
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+  },
+};
 </script>
 
 <style lang="css">
 .img1 {
   border-radius: 50%;
-  width: 50%;
+  width:100px;
+  height:100px;
 }
 
 .upload-btn-wrapper {
@@ -381,7 +664,7 @@ export default {
   font-weight: bold;
 }
 
-.upload-btn-wrapper input[type=file] {
+.upload-btn-wrapper input[type="file"] {
   font-size: 100px;
   position: absolute;
   left: 0;
@@ -389,72 +672,73 @@ export default {
   opacity: 0;
 }
 
-
-
 .our-team {
-    box-shadow: 0 0 0 rgb(0 0 0 / 30%);
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease 0s;
+  box-shadow: 0 0 0 rgb(0 0 0 / 30%);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease 0s;
 }
 
 .hover-team:hover img {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .our-team:hover img {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 .our-team img {
-    width: 100%;
-    height: auto;
-    transition: all 0.3s ease-in-out 0s;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .our-team .team-content {
-    color: #000;
-    opacity: 1;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    background: #ffffff;
-    padding-left: 55px;
-    width: 100%;
-    transition: all 0.3s ease 0s;
+  color: #000;
+  opacity: 1;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: #ffffff;
+  padding-left: 55px;
+  width: 100%;
+  transition: all 0.3s ease 0s;
 }
 .our-team .social li {
-    display: block;
+  display: block;
 }
 .hover-team:hover .social li:nth-child(1) a {
-    transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .our-team .icon {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    background: #b0b435;
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    bottom: 0;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background: #b0b435;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
 }
 
-.fa, .fas {
-    font-weight: 900;
+.fa,
+.fas {
+  font-weight: 900;
 }
 
-.fa, .far, .fas {
-    font-family: "Font Awesome 5 Free";
+.fa,
+.far,
+.fas {
+  font-family: "Font Awesome 5 Free";
 }
 .hover-team .team-content .title {
-    border-bottom: 2px solid #b0b435;
+  border-bottom: 2px solid #b0b435;
 }
 .team-description {
-    padding: 20px 0px;
+  padding: 20px 0px;
 }
 .team-description p {
-    font-size: 14px;
-    margin: 0px;
+  font-size: 14px;
+  margin: 0px;
 }
 </style>

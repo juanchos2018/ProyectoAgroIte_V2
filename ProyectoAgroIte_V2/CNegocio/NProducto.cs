@@ -1,6 +1,8 @@
 ﻿using CDatos;
 using CEntidad;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,11 +35,32 @@ namespace CNegocio
             }
         }
 
-        public List<Producto> GetMyProductos(int idusuario)
+        public IEnumerable GetMyProductos(int idusuario)
         {
+            //using (var db = new ClsConexion())
+            //{
+            //    var lista = db.Producto.Where(x=>x.IdUsuario==idusuario).ToList();
+            //    return lista;
+            //}
+
             using (var db = new ClsConexion())
             {
-                var lista = db.Producto.Where(x=>x.IdUsuario==idusuario).ToList();
+                var lista = (from pro in db.Producto
+                             join usu in db.Usuario on pro.IdUsuario equals usu.IdUsuario
+                             where pro.IdUsuario==idusuario
+                             select new
+                             {
+                                 IdProducto = pro.IdProducto,
+                                 Nombre_Producto = pro.Nombre_Producto,
+                                 RutaImagen = pro.RutaImagenes_Producto,
+                                 Descripcion = pro.Descripcion_Producto,
+                                 Precio = pro.Precio_Referencial,
+                                 Nombres = usu.Nombres,
+                                 Apellidos = usu.Apellidos,
+                                 Direccion = usu.Direccion
+
+                             }).ToList();
+
                 return lista;
             }
         }
@@ -45,7 +68,31 @@ namespace CNegocio
         {
             using (var db = new ClsConexion())
             {
-                var lista = db.Producto.ToList();
+                var lista = db.Producto
+                    .Include(x=>x.Categoria).ToList();            
+                return lista;
+            }
+        }
+
+        public IEnumerable GetProductosAll2()
+        {
+            using (var db = new ClsConexion())
+            {
+                var lista = (from pro in db.Producto
+                     join usu in db.Usuario on pro.IdUsuario equals usu.IdUsuario
+                     select new
+                     {
+                         IdProducto = pro.IdProducto,
+                         Nombre_Producto = pro.Nombre_Producto,
+                         RutaImagen=pro.RutaImagenes_Producto,
+                         Descripcion = pro.Descripcion_Producto,
+                         Precio = pro.Precio_Referencial,
+                         Nombres = usu.Nombres,
+                         Apellidos=usu.Apellidos,
+                         Direccion=usu.Direccion
+
+                     }).ToList();
+
                 return lista;
             }
         }

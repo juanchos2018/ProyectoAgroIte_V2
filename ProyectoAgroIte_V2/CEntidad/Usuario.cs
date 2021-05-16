@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CEntidad
 {
-   public class Usuario
+    public class Usuario
     {
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         //public Usuario()
@@ -34,7 +34,7 @@ namespace CEntidad
         [StringLength(10)]
         public string Num_Identificacion { get; set; }
 
-       // public byte[] Foto_Perfil { get; set; }
+        // public byte[] Foto_Perfil { get; set; }
 
         public string RutaFoto_Perfil { get; set; }
 

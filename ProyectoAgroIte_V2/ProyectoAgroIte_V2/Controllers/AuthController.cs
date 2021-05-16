@@ -50,7 +50,8 @@ namespace ProyectoAgroIte_V2.Controllers
                     {
                         Alias = user.Alias,
                         IdUsuario = user.IdUsuario,
-                        Nombre = user.Nombres,                      
+                        Nombre = user.Nombres,  
+                        UrlFoto=user.RutaFoto_Perfil,
 
                     },
                 });
@@ -83,6 +84,7 @@ namespace ProyectoAgroIte_V2.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, userInfo.Alias),
                 new Claim("Id", userInfo.IdUsuario.ToString()),
                 new Claim("Nombre", fullname),
+                 new Claim("Img", userInfo.RutaFoto_Perfil),
                 new Claim("Actividad",activida),               
                 new Claim(ClaimTypes.Role,activida),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),

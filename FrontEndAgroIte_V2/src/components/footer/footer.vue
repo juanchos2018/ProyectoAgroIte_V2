@@ -1,6 +1,12 @@
 <template>
-      <footer>
+
+<div>
+       <div class="instagram-box">
+               <Carousel></Carousel>
+           </div>
+        <footer>
         <div class="footer-main">
+         
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
@@ -77,32 +83,15 @@
             </div>
         </div>
     </footer>
+</div>
+     
 </template>
 
 <script>
+import Carousel from "@/components/carousel/Carousel"
 export default {
       name: 'footer',
+      components: {Carousel}
 }
 </script>
-
-<style lang="css">
-
-.footer-main {
-    padding: 70px 0px;
-    background: #010101;
-}
-
-.footer-widget p {
-    color: #cccccc;
-    font-weight: 400;
-    font-size: 14px;
-    padding-bottom: 20px;
-}
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-</style>
+<style src="./fotter.css"   />

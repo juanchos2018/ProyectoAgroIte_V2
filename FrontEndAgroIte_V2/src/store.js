@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {
-    encryptUser
-} from './components/shared/service/authService'
+
 import decode from 'jwt-decode'
 Vue.use(Vuex)
 
@@ -13,7 +11,10 @@ export default new Vuex.Store({
         token: null,
         usuario: null,
         nombreUsuario:'',
-        idUsuario:''
+        idUsuario:'',
+        etiquetaSalir:false,
+        etiquetaIniciar:true,
+        etiquetaNombre:false
 
     },
 
@@ -26,15 +27,19 @@ export default new Vuex.Store({
         }
     },
     mutations: {
-        ADD_CART_LOCAL: (state, product) => {
-            state.cartProducts.push(product)
-            localStorage.setItem('iki-cart', JSON.stringify(state.cartProducts))
-        },
 
-        ADD_LOGGED_USER: (state, user) => {
-            state.loggedUser = user
-            localStorage.setItem('_auth', encryptUser(user))
+        EstadoLogueado: (state, data) => {
+            state.etiquetaSalir=data.etiquetaSalir
+            state.etiquetaIniciar=data.etiquetaIniciar
+            state.etiquetaNombre=data.etiquetaNombre            
         },
+        EstadoNoLogueado: (state, data) => {
+            state.etiquetaSalir=data.etiquetaSalir
+            state.etiquetaIniciar=data.etiquetaIniciar
+            state.etiquetaNombre=data.etiquetaNombre               
+        },
+        
+       
 
         SET_CART_PRODUCTS: (state, products) => {
             state.cartProducts = []
@@ -51,7 +56,6 @@ export default new Vuex.Store({
           },
     },
     actions: {
-
         guardarToken({commit},token){
             commit("setToken", token)
             commit("setUsuario", decode(token))

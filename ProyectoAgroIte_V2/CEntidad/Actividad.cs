@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace CEntidad
 {
    public class Actividad
     {
+        [Key]
         public int IdActividad { get; set; }
         public string Nombre { get; set; }
 

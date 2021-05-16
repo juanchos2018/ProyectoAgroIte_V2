@@ -58,5 +58,6 @@ namespace ProyectoAgroIte_V2.Controllers
                 return Json(e);
             }
         }
+      
     }
 }

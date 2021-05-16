@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace CEntidad
 {
-   public class Producto
+    public class Producto
     {
         [Key]
         public int IdProducto { get; set; }
@@ -18,7 +19,7 @@ namespace CEntidad
 
         public decimal Precio_Referencial { get; set; }
 
-       
+
         //public byte[] Imagenes_Producto { get; set; }
 
         public string RutaImagenes_Producto { get; set; }
@@ -42,5 +43,7 @@ namespace CEntidad
         public int? IdUsuario { get; set; }
 
         public virtual Categoria Categoria { get; set; }
+        //[NotMapped]
+        
     }
 }
