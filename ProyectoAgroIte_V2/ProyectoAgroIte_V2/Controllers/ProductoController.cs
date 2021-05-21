@@ -113,5 +113,89 @@ namespace ProyectoAgroIte_V2.Controllers
             var query = producs.GetProductosAll2();
             return Json(query);
         }
+
+        [Route("Producto/GetProducto")]
+        public JsonResult GetProducto([FromBody] Producto d)
+        {
+            int id = d.IdProducto;
+            NProducto producs = new NProducto();
+            var obje = producs.GetProduct(id);
+            return Json(obje);
+        }
+
+        [Route("Producto/UpdateProducto")]     
+        public IActionResult Update(IFormCollection UploadedFiles)
+        {
+            Producto pro = new Producto();
+            NProducto nusuario = new NProducto();
+            string filePath = "";
+            pro.IdProducto = int.Parse(UploadedFiles["IdProducto"].ToString());
+            pro.IdCategoria = int.Parse(UploadedFiles["IdCategoria"].ToString());
+            pro.Nombre_Producto = UploadedFiles["Nombre_Producto"].ToString();
+            pro.Precio_Referencial = int.Parse(UploadedFiles["Precio_Referencial"].ToString());
+            pro.Descripcion_Producto = UploadedFiles["Descripcion_Producto"].ToString();
+            pro.Fecha_Inicio = UploadedFiles["Fecha_Inicio"].ToString();
+            pro.Fecha_Fin = UploadedFiles["Fecha_Fin"].ToString();
+            pro.Cantidad_Producida = UploadedFiles["Cantidad_Producida"].ToString();
+            pro.IdUnidad_Volumen = int.Parse(UploadedFiles["IdUnidad_Volumen"].ToString());
+            pro.Idfrecuencia = int.Parse(UploadedFiles["Idfrecuencia"].ToString());
+            pro.IdUsuario = int.Parse(UploadedFiles["IdUsuario"].ToString());
+            
+            string ruta = Path.Combine(_env.WebRootPath, "img/product");
+            long size = UploadedFiles.Files.Sum(f => f.Length);
+            string fileName = "";
+            string rutaimguser = "";
+            if (size == 0)
+            {
+                rutaimguser = UploadedFiles["RutaImagenes_Producto"].ToString();
+            }
+            else
+            {
+                string imgacttual = UploadedFiles["RutaImagenes_Producto"].ToString();
+                string[] arrayruta = imgacttual.Split("/");
+                if (arrayruta[2].ToString() != "default.png")
+                {
+                    System.IO.File.Delete(Path.Combine(_env.WebRootPath, imgacttual));
+                }
+                foreach (var formFile in UploadedFiles.Files)
+                {
+                    if (formFile.Length > 0)
+                    {
+                        fileName = pro.IdUsuario + "-" + formFile.FileName;
+                        filePath = Path.Combine(ruta, fileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            formFile.CopyTo(fileStream);
+                        }
+                    }
+                }                
+                rutaimguser = "img/product/" + fileName;
+            }
+            pro.RutaImagenes_Producto = rutaimguser;
+
+            try
+            {
+                var result = nusuario.UpdateProduct(pro);    
+                var salida = new
+                {
+                    estado = "OK",
+                    msg = "Datos Actualizados",                 
+
+                };
+                return Json(salida);
+            }
+            catch (Exception e)
+            {
+                return Json(e);
+            }
+        }
+
+        [Route("Producto/DeleteProducto")]
+        public JsonResult DeletProducto([FromBody] Producto d)
+        {            
+            NProducto producs = new NProducto();
+            var obje = producs.Delete(d);
+            return Json(obje);
+        }
     }
 }

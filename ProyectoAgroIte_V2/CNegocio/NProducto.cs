@@ -96,5 +96,48 @@ namespace CNegocio
                 return lista;
             }
         }
+
+        public Producto GetProduct(int idproducto)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Producto.Where(x=>x.IdProducto== idproducto).FirstOrDefault();
+            }
+        }
+        public Producto UpdateProduct(Producto c)
+        {
+            using (var db = new ClsConexion())
+            {
+                var resul = db.Producto
+                    .Where(d => d.IdUsuario == c.IdUsuario && d.IdProducto==c.IdProducto)
+                    .FirstOrDefault();
+                resul.Nombre_Producto = c.Nombre_Producto;
+                resul.Descripcion_Producto = c.Descripcion_Producto;
+                resul.Cantidad_Producida = c.Cantidad_Producida;
+                resul.IdCategoria = c.IdCategoria;
+                resul.Precio_Referencial = c.Precio_Referencial;
+                resul.Fecha_Inicio = c.Fecha_Inicio;
+                resul.Fecha_Fin = c.Fecha_Fin;
+                resul.IdUnidad_Volumen = c.IdUnidad_Volumen;
+                resul.Idfrecuencia = c.Idfrecuencia;
+                resul.RutaImagenes_Producto = c.RutaImagenes_Producto;
+                db.SaveChanges();
+                return resul;
+            }
+        }
+        public string Delete(Producto data)
+        {
+            using (var db = new ClsConexion())
+            {
+                var detalle = db.Producto
+                    .Where(d => d.IdProducto==data.IdProducto && d.IdUsuario==data.IdUsuario).ToList();
+                foreach (var item in detalle)
+                {
+                    db.Producto.Remove(item);
+                }
+                var resultado = db.SaveChanges();
+                return "OK";
+            }
+        }
     }
 }

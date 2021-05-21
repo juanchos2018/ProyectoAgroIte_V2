@@ -1,0 +1,12 @@
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\bin\Release\netcoreapp3.1\CDatos.deps.json
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\bin\Release\netcoreapp3.1\CDatos.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\bin\Release\netcoreapp3.1\CDatos.pdb
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\bin\Release\netcoreapp3.1\CEntidad.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\bin\Release\netcoreapp3.1\CEntidad.pdb
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Release\netcoreapp3.1\CDatos.csprojAssemblyReference.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Release\netcoreapp3.1\CDatos.AssemblyInfoInputs.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Release\netcoreapp3.1\CDatos.AssemblyInfo.cs
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Release\netcoreapp3.1\CDatos.csproj.CoreCompileInputs.cache
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Release\netcoreapp3.1\CDatos.csproj.CopyComplete
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Release\netcoreapp3.1\CDatos.dll
+D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Release\netcoreapp3.1\CDatos.pdb

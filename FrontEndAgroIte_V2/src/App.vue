@@ -41,25 +41,8 @@ export default {
   -moz-osx-font-smoothing: grayscale; 
   color: #2c3e50;
 }
-#nav {
-  padding: 15px;
-}
 
-#nav > a {
-  font-weight: bold;
-  color: #2c3e50;
-  /* &.router-link-exact-active {
-    color: #42b983;
-  } */
-}
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
-}
 .footer {
   position: relative;
   bottom: 0;

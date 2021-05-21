@@ -31,7 +31,7 @@
                       name="myfile"
                       v-on:change="handleFileUploads"
                     />-->
-                      <label data-v-3a42fd9f="" data-v-10d1d8f2="" label="file" class="button file-input">
+               <label data-v-3a42fd9f="" data-v-10d1d8f2="" label="file" class="button file-input">
             <svg data-v-3a42fd9f="" width="30px" height="30px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload-cloud">
             <polyline data-v-3a42fd9f="" points="16 16 12 12 8 16">
               </polyline>
@@ -43,41 +43,24 @@
                   </div>
               </center>
               <br />
-              <b-list-group-item href="#" class="flex-column align-items-start">
+              <b-list-group-item href="#" class="flex-column align-items-start"  @click="MostrarAgregarProducto">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Agregar Productos</h5>
-                   
-                  <small>3 days ago</small>
-                </div>
-                <b-button
-                  variant="outline-primary"
-                  style="float:right"
-                  @click="MostrarAgregarProducto"
-                  >Mostrar</b-button
-                >
+                  <h4 class="mb-1">Agregar Productos</h4>  
+               
+                </div>               
               </b-list-group-item>
 
-              <b-list-group-item href="#" class="flex-column align-items-start">
+              <b-list-group-item href="#" class="flex-column align-items-start active"   @click="MosrarMisProductos">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Mis Productos</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <b-button
-                  variant="outline-primary"
-                  style="float:right"
-                  @click="MosrarMisProductos"
-                  >Mostrar</b-button
-                >
+                  <h4 class="mb-1">Mis Productos</h4>
+               
+                </div>               
               </b-list-group-item>
-
-              <b-list-group-item href="#" class="flex-column align-items-start">
+              <b-list-group-item href="#" class="flex-column align-items-start"  @click="MostrarMiPerfil">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">Mis Datos</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <b-button variant="outline-primary" style="float:right"
-                @click="MostrarMiPerfil"  >Mostrar</b-button
-                >
+                  <h4 class="mb-1">Mis Datos</h4>
+                
+                </div>              
               </b-list-group-item>
             </b-list-group>
           </b-card>
@@ -89,35 +72,34 @@
                 <h2 class="noo-sh-title">Mis Productos</h2>
               </div>
               <div
-                class="col-sm-6 col-lg-3"
+                class="col-sm-6 col-lg-4"
                 v-for="item in itemMisProductos"
                 :key="item.key"
               >
                 <div class="hover-team">
                   <div class="our-team">
-                    <img
-                      v-bind:src="ApiRutaNetCore + item.rutaImagen"
-                      style="height:200px;"
-                    />
+                    
+                       <b-img thumbnail fluid   v-bind:src="ApiRutaNetCore + item.rutaImagen" alt="Image 1"></b-img>
+
                     <div class="team-content">
-                      <h3 class="title">
+                      <h5 class="title">
                         <b
                           ><i class="fa fa-fire"></i>&nbsp;
                           {{ item.nombre_Producto }}</b
                         >
-                      </h3>
+                      </h5>
                       <span class="post">item.Categoria.Nombre</span>
                     </div>
                     <ul class="social">
                       <li>
-                        <a href="#" class=" fa fa-edit"></a>
+                        <a href="#" @click="ViewEditProduct(item.idProducto)">    <b-icon icon="pencil-fill"></b-icon></a>
                       </li>
                       <li>
-                        <a href="#" class="fa fa-trash"></a>
+                        <a href="#" @click="MessageDelete(item.idProducto)"> <b-icon icon="trash2-fill"></b-icon></a>
                       </li>
                     </ul>
                     <div class="icon">
-                      <i class="fa fa-plus" aria-hidden="true"></i>
+                      <b-icon  font-scale="2" icon="plus"></b-icon>
                     </div>
                   </div>
                   <div class="team-description">
@@ -140,7 +122,7 @@
                 <b-form-group label="Categoria:" class="col-md-4">
                   <b-form-select
                     :options="itemCategorias"
-                    v-model="IdCategoria"
+                    v-model="producUser.IdCategoria"
                     id="inline-form-custom-select-pref"
                     class="mb-2 mr-sm-2 mb-sm-0"
                   ></b-form-select>
@@ -148,7 +130,7 @@
 
                 <b-form-group label="Nombre de Producto:" class="col-md-8">
                   <b-form-input
-                    v-model="Nombre_Producto"
+                    v-model="producUser.Nombre_Producto"
                     required
                   ></b-form-input>
                 </b-form-group>
@@ -157,14 +139,14 @@
                 <b-form-group label="Precio:" class="col-md-4">
                   <b-form-input
                     type="number"
-                    v-model="Precio_Referencial"
+                    v-model="producUser.Precio_Referencial"
                     required
                   ></b-form-input>
                 </b-form-group>
                 <b-form-group label="Descropcion Producto:" class="col-md-8">
                   <b-form-input
                     type="text"
-                    v-model="Descripcion_Producto"
+                    v-model="producUser.Descripcion_Producto"
                     required
                   ></b-form-input>
                 </b-form-group>
@@ -174,14 +156,14 @@
                 <b-form-group label="Cantidad Producida:" class="col-md-4">
                   <b-form-input
                     type="number"
-                    v-model="Cantidad_Producida"
+                    v-model="producUser.Cantidad_Producida"
                     required
                   ></b-form-input>
                 </b-form-group>
                 <b-form-group label="Fecha Inicio:" class="col-md-4">
                   <b-form-input
                     type="date"
-                    v-model="Fecha_Inicio"
+                    v-model="producUser.Fecha_Inicio"
                     required
                   ></b-form-input>
                 </b-form-group>
@@ -189,7 +171,7 @@
                 <b-form-group label="Fecha Fin:" class="col-md-4">
                   <b-form-input
                     type="date"
-                    v-model="Fecha_Fin"
+                    v-model="producUser.Fecha_Fin"
                     required
                   ></b-form-input>
                 </b-form-group>
@@ -199,7 +181,7 @@
                 <b-form-group label="Unidad Medioda:" class="col-md-4">
                   <b-form-select
                     :options="itemUnidadVolumen"
-                    v-model="IdUnidad_Volumen"
+                    v-model="producUser.IdUnidad_Volumen"
                     id="inline-form-custom-select-pref"
                     class="mb-2 mr-sm-2 mb-sm-0"
                   ></b-form-select>
@@ -207,39 +189,50 @@
                 <b-form-group label="Frecuenca:" class="col-md-4">
                   <b-form-select
                     :options="itemFrecuecia"
-                    v-model="Idfrecuencia"
+                    v-model="producUser.Idfrecuencia"
                     id="inline-form-custom-select-pref"
                     class="mb-2 mr-sm-2 mb-sm-0"
                   ></b-form-select>
                 </b-form-group>
-                <b-form-group label="imagen:" class="col-md-4">
-                  <div class="upload-btn-wrapper">
-                    <button class="btn1">Imagen</button>
-                    <input
-                      type="file"
-                      id="files"
-                      ref="files"
-                      name="myfile"
-                      v-on:change="handleFileUploads"
-                    />
-                  </div>
+                <b-form-group label="imagen:" class="col-md-4">                
+
+                  <span class="btn btn-primary btn-file">
+                  Imagen<input   type="file"
+                        id="files"
+                        ref="files"
+                        name="myfile"
+                        v-on:change="handleFileUploads">
+                    </span>
                 </b-form-group>
               </div>
-              <b-button
+              <div v-if="producUser.IdProducto==''">
+                    <b-button
                 type="button"
                 variant="primary"
-                @click="RegistrarProducto"
-              >
+                @click="RegistrarProducto" >
                 <b-spinner v-if="loanding" small type="grow"></b-spinner>
                 Registrar</b-button
               >
+             
+              </div>
+              <div v-else>
+                      <b-button
+                type="button"
+                variant="primary"
+                @click="MessageUpdate" >
+                <b-spinner v-if="loanding" small type="grow"></b-spinner>
+                Modificar</b-button
+              >
+                 
+              </div>
+            
             </b-card>
           </div>
 
           <div v-if="VerMiPerfil">
                <div class="col-12">
                    <br>
-                <h2 class="noo-sh-title">Mis Datos</h2>
+                <h4 class="noo-sh-title">Mis Datos</h4>
               </div>
             <div class="form-row">
               <b-form-group label="Nombre:" class="col-md-4">
@@ -312,16 +305,17 @@
                   required
                 ></b-form-input>
               </b-form-group>
-            </div>
-
-            <div class="form-row">
-              <b-form-group label="Celular:" class="col-md-4">
+                <b-form-group label="Celular:" class="col-md-4">
                 <b-form-input
                   v-model="Celular"
                   type="number"
                   required
                 ></b-form-input>
               </b-form-group>
+            </div>
+
+            <div class="form-row">
+            
 
               <b-form-group label="Organizacion:" class="col-md-4">
                 <b-form-input
@@ -331,7 +325,7 @@
                 ></b-form-input>
               </b-form-group>
             </div>
-            <b-button type="button" variant="primary" @click="Editar">
+            <b-button type="button" variant="primary" @click="MessageUpdate2">
               <b-spinner v-if="loanding" small type="grow"></b-spinner>
               Guardar</b-button
             >
@@ -352,20 +346,25 @@ export default {
       MisProductos: false,
       AgregarProducto: true,
       VerMiPerfil: false,
+      NewProduct:true,
       itemCategorias: [],
       itemUnidadVolumen: [],
       itemFrecuecia: [],
       itemMisProductos: [],
-      IdCategoria: "",
-      Nombre_Producto: "",
-      Precio_Referencial: "",
-      Descripcion_Producto: "",
-      Fecha_Inicio: "",
-      Fecha_Fin: "",
-      Cantidad_Producida: "",
-      IdUnidad_Volumen: "",
-      Idfrecuencia: "",
-      IdUsuario: null,
+      producUser:{
+        IdProducto:'',
+        IdCategoria: "",    
+        Nombre_Producto: "",
+        Precio_Referencial: "",
+        Descripcion_Producto: "",
+        Fecha_Inicio: "",
+        Fecha_Fin: "",
+        Cantidad_Producida: "",
+        IdUnidad_Volumen: "",
+        Idfrecuencia: "",
+        IdUsuario: null,
+        RutaImagenes_Producto:''
+      },
       files: [],
       file: "",
       url: null,
@@ -409,7 +408,7 @@ export default {
    
     this.NombreUsuario = this.datosUsuario.Nombre;
     this.RutaMIFoto = this.datosUsuario.Img;
-    this.IdUsuario=this.datosUsuario.Id
+    this.producUser.IdUsuario=this.datosUsuario.Id
   },
   methods: {
     MosrarMisProductos() {
@@ -419,6 +418,8 @@ export default {
       this.ListarMisProductos();
     },
     MostrarAgregarProducto() {
+      this.CleanControl()
+      this.NewProduct=true;
       this.MisProductos = false;
       this.VerMiPerfil = false;
       this.AgregarProducto = true;
@@ -435,10 +436,11 @@ export default {
               method: 'post',
               url: this.RutaNetCore+'Usuario/GetUsuario',
               data: {
-                IdUsuario:parseInt(me.IdUsuario),               
+                IdUsuario:parseInt(me.producUser.IdUsuario),               
               }
           })
-          .then(response => {                        
+          .then(response => {        
+            console.log(response.data)                
                 me.Correo=response.data.correo; 
                 me.Nombres=response.data.nombres  
                 me.Apellidos=response.data.apellidos  
@@ -453,14 +455,20 @@ export default {
                 me.Organizacion=response.data.organizacion
               })  
     },
-    Editar(){
+    EditarUser(){
         let me = this;
-        let data={IdUsuario:parseInt( me.IdUsuario)}
+        let data={IdUsuario:parseInt( me.producUser.IdUsuario),
+        Nombres: me.Nombres,
+        Apellidos:  me.Apellidos,
+        Alias: me.Alias,
+        Correo: me.Correo,
+        Direccion:me.Direccion,
+        Celular:me.Celular}
         axios
-        .post(this.RutaNetCore + "Usuario/GetUsuario",data)
+        .post(this.RutaNetCore + "Usuario/UpdateUsuario",data)
         .then((response) => {
-          console.log(response.data);
-         
+         console.log(response.data);
+          me.Mensaje(); 
         })
         .catch(function(error) {
           console.log(error);
@@ -490,7 +498,7 @@ export default {
               .catch(function (error) {
                   console.log(error);
                   this.loanding = false;
-              });
+          });
     },
     ListarCategorias() {
       let me = this;
@@ -543,7 +551,7 @@ export default {
     ListarMisProductos() {
       let me = this;
       let Usuario = {
-        IdUsuario:parseInt( me.IdUsuario),
+        IdUsuario:parseInt( me.producUser.IdUsuario),
       };
       axios
         .post(this.RutaNetCore + "Producto/GetMyProducto", Usuario, {
@@ -569,16 +577,16 @@ export default {
         let file = this.files[i];
         data.append("files[" + i + "]", file);
       }
-      data.append("IdCategoria", this.IdCategoria);
-      data.append("Nombre_Producto", this.Nombre_Producto);
-      data.append("Precio_Referencial", this.Precio_Referencial);
-      data.append("Descripcion_Producto", this.Descripcion_Producto);
-      data.append("Fecha_Inicio", this.Fecha_Inicio);
-      data.append("Fecha_Fin", this.Fecha_Fin);
-      data.append("Cantidad_Producida", this.Cantidad_Producida);
-      data.append("IdUnidad_Volumen", this.IdUnidad_Volumen);
-      data.append("Idfrecuencia", this.Idfrecuencia);
-      data.append("IdUsuario", this.IdUsuario);
+      data.append("IdCategoria", this.producUser.IdCategoria);
+      data.append("Nombre_Producto", this.producUser.Nombre_Producto);
+      data.append("Precio_Referencial", this.producUser.Precio_Referencial);
+      data.append("Descripcion_Producto", this.producUser.Descripcion_Producto);
+      data.append("Fecha_Inicio", this.producUser.Fecha_Inicio);
+      data.append("Fecha_Fin", this.producUser.Fecha_Fin);
+      data.append("Cantidad_Producida", this.producUser.Cantidad_Producida);
+      data.append("IdUnidad_Volumen", this.producUser.IdUnidad_Volumen);
+      data.append("Idfrecuencia", this.producUser.Idfrecuencia);
+      data.append("IdUsuario", this.producUser.IdUsuario);
 
       let config = {
         header: {
@@ -589,7 +597,8 @@ export default {
         .post(this.RutaNetCore + "Producto/SetProducto", data, config)
         .then((response) => {       
           if (response.status == 200) {
-            this.Confirmacion(response.data.Mensaje);
+            this.Confirmacion(response.data.mensaje);
+            this.CleanControl();
           }
           this.loanding = false;
         })
@@ -609,7 +618,7 @@ export default {
       });
     },
     Mensaje(){
-        this.$Swal.fire('Modificado Imagen')
+        this.$Swal.fire('Se ha Modificado')
     },
     Documentos() {
       var Tipo_Documento = 0;
@@ -626,8 +635,7 @@ export default {
       var actividad = [];
       axios
         .get(this.RutaNetCore + "Actividad/GetActividad")
-        .then((response) => {
-        
+        .then((response) => {        
           actividad = response.data;
           actividad.map(function(x) {
             me.itemActividad.push({ text: x.nombre, value: x.idActividad });
@@ -637,6 +645,142 @@ export default {
           console.log(error);
         });
     },
+    ViewEditProduct(id){      
+           let me =this;      
+            me.MostrarAgregarProducto()
+            //me.NewProduct=false;
+            let data={IdProducto:id}                       
+            axios.post(me.RutaNetCore + 'Producto/GetProducto',data)
+            .then(function (response) {
+              console.log(response.data)    
+
+              me.producUser.IdProducto= response.data.idProducto
+              me.producUser.IdCategoria= response.data.idCategoria 
+              me.producUser.Nombre_Producto= response.data.nombre_Producto 
+              me.producUser.Descripcion_Producto= response.data.descripcion_Producto 
+              me.producUser.Precio_Referencial= response.data.precio_Referencial 
+              me.producUser.Cantidad_Producida= response.data.cantidad_Producida 
+              me.producUser.Fecha_Inicio= response.data.fecha_Inicio       
+              me.producUser.Fecha_Fin= response.data.fecha_Fin 
+              me.producUser.IdUnidad_Volumen= response.data.idUnidad_Volumen 
+              me.producUser.Idfrecuencia= response.data.idfrecuencia 
+              me.producUser.RutaImagenes_Producto= response.data.rutaImagenes_Producto 
+              
+            })
+            .catch(function (error) {
+                console.log(error);                
+        });
+    },
+    MessageUpdate2(){
+          this.$swal({
+              title: 'Desea Editar ?',                
+              showCancelButton: true,
+              confirmButtonText: `Si`,                  
+                }).then((result) => {                  
+                if (result.isConfirmed) {
+                    this.EditarUser();                    
+                } else if (result.isDenied) {
+                  this.$swal('No Editado', '', 'info')
+              }
+        })
+    },
+    MessageUpdate(){
+          this.$swal({
+              title: 'Desea Editar ?',                
+              showCancelButton: true,
+              confirmButtonText: `Si`,                  
+                }).then((result) => {                  
+                if (result.isConfirmed) {
+                    this.UpdateProducto();                    
+                } else if (result.isDenied) {
+                  this.$swal('No Editado', '', 'info')
+              }
+        })
+    },
+    MessageDelete(id){
+         this.$swal({
+              title: 'Desea Eliminar ?',                
+              showCancelButton: true,
+              confirmButtonText: `Si,Eliminar`,                  
+                }).then((result) => {                  
+                if (result.isConfirmed) {
+                    this.DelteProduct(id)                 
+                } else if (result.isDenied) {
+                  this.$swal('No Eliminado', '', 'info')
+              }
+        })
+    },
+    UpdateProducto(){
+      this.loanding = true;
+      let data = new FormData();
+      for (var i = 0; i < this.files.length; i++) {
+        let file = this.files[i];
+        data.append("files[" + i + "]", file);
+      }
+      data.append("IdProducto", this.producUser.IdProducto);
+      data.append("RutaImagenes_Producto", this.producUser.RutaImagenes_Producto);
+      data.append("IdCategoria", this.producUser.IdCategoria);
+      data.append("Nombre_Producto", this.producUser.Nombre_Producto);
+      data.append("Precio_Referencial", this.producUser.Precio_Referencial);
+      data.append("Descripcion_Producto", this.producUser.Descripcion_Producto);
+      data.append("Fecha_Inicio", this.producUser.Fecha_Inicio);
+      data.append("Fecha_Fin", this.producUser.Fecha_Fin);
+      data.append("Cantidad_Producida", this.producUser.Cantidad_Producida);
+      data.append("IdUnidad_Volumen", this.producUser.IdUnidad_Volumen);
+      data.append("Idfrecuencia", this.producUser.Idfrecuencia);
+      data.append("IdUsuario", this.producUser.IdUsuario);
+
+      let config = {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
+      axios
+        .post(this.RutaNetCore + "Producto/UpdateProducto", data, config)
+        .then((response) => {       
+          if (response.status == 200) {
+            this.Confirmacion(response.data.mensaje);
+            this.CleanControl();
+          }
+          this.loanding = false;
+        })
+        .catch(function(error) {
+          console.log(error);
+          this.loanding = false;
+        });
+    },
+    DelteProduct(id){
+      let me = this;
+      let json = {
+        IdProducto:id,
+        IdUsuario:parseInt( me.producUser.IdUsuario),
+      };
+      axios
+        .post(this.RutaNetCore + "Producto/DeleteProducto", json, {
+          emulateJSON: true,
+        })
+        .then((response) => {
+         
+          alert(response.data)
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    CleanControl(){
+        let me =this;
+         me.producUser.IdProducto=""
+         me.producUser.IdCategoria= ""    
+         me.producUser.Nombre_Producto= ""
+         me.producUser.Precio_Referencial= ""
+         me.producUser.Descripcion_Producto= ""
+         me.producUser.Fecha_Inicio=""
+         me.producUser.Fecha_Fin=""
+         me.producUser.Cantidad_Producida= ""
+         me.producUser.IdUnidad_Volumen= ""
+         me.producUser.Idfrecuencia=""      
+         me.files=[] 
+    }
   },
 };
 </script>
@@ -647,98 +791,31 @@ export default {
   width:100px;
   height:100px;
 }
+.imgitem{
+  width: 100%;
+  max-width: 400px;
+  height: auto; 
+}
 
-.upload-btn-wrapper {
+
+.btn-file {
   position: relative;
   overflow: hidden;
-  display: inline-block;
 }
-
-.btn1 {
-  border: 2px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 5px 15px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.upload-btn-wrapper input[type="file"] {
-  font-size: 100px;
+.btn-file input[type=file] {
   position: absolute;
-  left: 0;
   top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
   opacity: 0;
-}
-
-.our-team {
-  box-shadow: 0 0 0 rgb(0 0 0 / 30%);
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease 0s;
-}
-
-.hover-team:hover img {
-  opacity: 0.5;
-}
-
-.our-team:hover img {
-  opacity: 0.5;
-}
-.our-team img {
-  width: 100%;
-  height: auto;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.our-team .team-content {
-  color: #000;
-  opacity: 1;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  background: #ffffff;
-  padding-left: 55px;
-  width: 100%;
-  transition: all 0.3s ease 0s;
-}
-.our-team .social li {
+  outline: none;
+  background: white;
+  cursor: inherit;
   display: block;
 }
-.hover-team:hover .social li:nth-child(1) a {
-  transition-delay: 0.3s;
-}
 
-.our-team .icon {
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  background: #b0b435;
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-}
-
-.fa,
-.fas {
-  font-weight: 900;
-}
-
-.fa,
-.far,
-.fas {
-  font-family: "Font Awesome 5 Free";
-}
-.hover-team .team-content .title {
-  border-bottom: 2px solid #b0b435;
-}
-.team-description {
-  padding: 20px 0px;
-}
-.team-description p {
-  font-size: 14px;
-  margin: 0px;
-}
 </style>

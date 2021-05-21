@@ -156,5 +156,17 @@ namespace ProyectoAgroIte_V2.Controllers
             };
             return Json(salida);
         }
+        [Route("Usuario/UpdateUsuario")]
+        public JsonResult UpdateUser([FromBody] Usuario d)
+        {
+            NUsuario nusuario = new NUsuario();
+            var res = nusuario.UpdateUsuario(d);
+            var data =new {
+                estado = "OK",
+                msg = "Datos Actualizados",
+               
+            };
+            return Json(data);
+        }
     }
 }

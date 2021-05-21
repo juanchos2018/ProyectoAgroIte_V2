@@ -94,4 +94,4 @@ export default {
       components: {Carousel}
 }
 </script>
-<style src="./fotter.css"   />
+

@@ -62,7 +62,7 @@ export default {
       axios
         .get(this.RutaNetCore + "Producto/GetProductoAll")
         .then((response) => {
-          console.log(response.data);
+         // console.log(response.data);
           me.productos = response.data;
         })
         .catch(function(error) {
@@ -73,15 +73,5 @@ export default {
 };
 </script>
 <style>
-.blog-box {
-    -webkit-box-shadow: 0px 5px 35px 0px rgb(148 146 245 / 15%);
-    box-shadow: 0px 5px 35px 0px rgb(148 146 245 / 15%);
-    background: #ffffff;
-    margin-bottom: 30px;
-}
 
-img {
-    vertical-align: middle;
-    border-style: none;
-}
 </style>

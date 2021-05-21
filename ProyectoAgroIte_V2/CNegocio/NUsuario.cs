@@ -68,5 +68,22 @@ namespace CNegocio
                 return resul;
             }
         }
+        public Usuario UpdateUsuario(Usuario c)
+        {
+            using (var db = new ClsConexion())
+            {
+                var resul = db.Usuario
+                    .Where(d => d.IdUsuario == c.IdUsuario)
+                    .FirstOrDefault();
+                resul.Nombres = c.Nombres;
+                resul.Apellidos = c.Apellidos;
+                resul.Alias = c.Alias;
+                resul.Correo = c.Correo;
+                resul.Direccion = c.Direccion;
+                resul.Celular = c.Celular;                
+                db.SaveChanges();
+                return resul;
+            }
+        }
     }
 }

@@ -76,7 +76,8 @@ export default {
             .then((respuesta) => {
               return respuesta.data;
             }).then((data) => {                       
-              this.loanding = false;              
+              this.loanding = false;        
+              console.log(data)      
               this.$eventHub.$emit('Ocultar')            
               this.$store.dispatch("guardarToken", data.token);
               this.$session.start();

@@ -3,9 +3,9 @@
    <b-carousel
       id="carousel-1"
       v-model="slide"
-      :interval="4000"
+      :interval="4000"   
+   
       controls
-      indicators
       background="#ababab"
       img-width="1024"
       img-height="480"
@@ -47,8 +47,9 @@
           >
         </template>
       </b-carousel-slide>
-    
+      
     </b-carousel>
+     
     </div>
 </template>
 
@@ -70,3 +71,19 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.offer-box, .slide {
+    color: #FFFFFF;
+    font-size: 13px;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+  color: red;
+  font-size: 20px;
+}
+ 
+</style>

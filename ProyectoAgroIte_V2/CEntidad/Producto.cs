@@ -13,7 +13,7 @@ namespace CEntidad
 
         public int? IdCategoria { get; set; }
 
-        [Required]
+      
         [StringLength(100)]
         public string Nombre_Producto { get; set; }
 

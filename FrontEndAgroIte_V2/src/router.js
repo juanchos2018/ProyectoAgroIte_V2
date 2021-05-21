@@ -33,6 +33,10 @@ export default new Router({
         name: 'menu',
         component: () => import('./views/menu/Menu.vue')
     },  
-    
+    {
+        path: '/galeria',
+        name: 'galeria',
+        component: () => import('./views/galeria/Galeria.vue')
+    }, 
     ]
 })

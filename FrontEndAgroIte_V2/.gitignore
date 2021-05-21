@@ -22,5 +22,6 @@ yarn-error.log*
 *.dll
 *.cache
 *.dll*
+*.dll
 # Config
 /server/mongo/configDummy.js
