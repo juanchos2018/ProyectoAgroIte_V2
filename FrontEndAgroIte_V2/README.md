@@ -1,14 +1,3 @@
-
-
-## Functionalitites
-1. User Registeration and Authentication using Passport.js (Email/password | Google Authentication)
-2. CRUD Operations like
-    * User can add product to his cart
-    * Admin can add product to the product list.
-    * Admin can edit/delete the product.
-3. Security
-    * Implementation of Authentication and Authorization.
-
 ## Tools and Technologies:
 * Technology : Vue.js + Express + Node.js + MongoDb (MEVN), HTML, Bootstrap, PWA.
 
