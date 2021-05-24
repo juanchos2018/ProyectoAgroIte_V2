@@ -42,19 +42,6 @@ This project was generated with [Vue CLI](https://github.com/vuejs/vue-cli) vers
 ```
 6. Run the server `npm run serve`
 
-## Screenshots:
-
-### Main Page:
-![Alt text](https://image.ibb.co/cF5D6V/screencapture-localhost-8081-2018-10-28-14-33-47.png)
-
-### Product Page:
-![Alt text](https://image.ibb.co/iZxh0q/screencapture-localhost-8081-products-2018-10-28-14-34-08.png)
-
-## How can I support the developer ?
-
-* Star my Github repo ⭐
-* Create pull requests, submit bugs, suggest new features or documentation updates 🛠
-
 ## Project setup
 ```
 npm install
