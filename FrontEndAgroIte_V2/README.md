@@ -1,19 +1,4 @@
-# ShoppingCart - Vue.js + Node.js + Express + MongoDB
 
-[![HitCount](http://hits.dwyl.io/ikismail/Vue-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Vue-ShoppingCart)
-[![GitHub forks](https://img.shields.io/github/forks/ikismail/Vue-ShoppingCart.svg)](https://github.com/ikismail/Vue-ShoppingCart/network)
-[![Github Dependencies](https://david-dm.org/ikismail/Vue-ShoppingCart.svg)](https://david-dm.org/ikismail/Vue-ShoppingCart.svg)
-[![GitHub stars](https://img.shields.io/github/stars/ikismail/Vue-ShoppingCart.svg)](https://github.com/ikismail/Vue-ShoppingCart/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/ikismail/Vue-ShoppingCart.svg)](https://github.com/ikismail/Vue-ShoppingCart/issues)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Vue-ShoppingCart/blob/master/LICENSE)
-[![npm](https://img.shields.io/badge/demo-online-brightgreen.svg)](https://vue-shop-cart.herokuapp.com/)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/ikismail/Vue-ShoppingCart.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fikismail%2FVue-ShoppingCart)
-
-Developing a **ShoppingCart (Ecommerce) Application using Vue.js**
-
-**Live Demo** : [Vue-Shopping-Cart](#)
-
-This project was generated with [Vue CLI](https://github.com/vuejs/vue-cli) version **3.x**
 
 ## Functionalitites
 1. User Registeration and Authentication using Passport.js (Email/password | Google Authentication)
