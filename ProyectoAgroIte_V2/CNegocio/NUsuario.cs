@@ -80,7 +80,9 @@ namespace CNegocio
                 resul.Alias = c.Alias;
                 resul.Correo = c.Correo;
                 resul.Direccion = c.Direccion;
-                resul.Celular = c.Celular;                
+                resul.Celular = c.Celular;
+                resul.Organizacion = c.Organizacion;
+
                 db.SaveChanges();
                 return resul;
             }

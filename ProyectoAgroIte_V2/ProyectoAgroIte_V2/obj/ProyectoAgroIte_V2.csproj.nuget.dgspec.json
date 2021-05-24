@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj": {}
+    "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj": {}
   },
   "projects": {
-    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj": {
+    "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj",
+        "projectUniqueName": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj",
         "projectName": "CDatos",
-        "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj",
-        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\obj\\",
+        "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj",
+        "packagesPath": "C:\\Users\\Virginia Aquino\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Virginia Aquino\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
-                "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj"
+              "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
+                "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj"
               }
             }
           }
@@ -76,24 +76,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
+    "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
+        "projectUniqueName": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
         "projectName": "CEntidad",
-        "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
-        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\obj\\",
+        "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
+        "packagesPath": "C:\\Users\\Virginia Aquino\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Virginia Aquino\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -134,24 +134,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj": {
+    "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
         "projectName": "CNegocio",
-        "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
-        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\obj\\",
+        "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj",
+        "packagesPath": "C:\\Users\\Virginia Aquino\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Virginia Aquino\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -166,11 +166,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj": {
-                "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj"
+              "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj": {
+                "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CDatos\\CDatos.csproj"
               },
-              "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
-                "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj"
+              "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
+                "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj"
               }
             }
           }
@@ -199,24 +199,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj": {
+    "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj",
+        "projectUniqueName": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj",
         "projectName": "ProyectoAgroIte_V2",
-        "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj",
-        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\obj\\",
+        "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2.csproj",
+        "packagesPath": "C:\\Users\\Virginia Aquino\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Virginia Aquino\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -231,8 +231,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj": {
-                "projectPath": "D:\\Disco local\\disco\\TrabajosEncargados\\ProyectoSemilleroUPT\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj"
+              "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj": {
+                "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CNegocio\\CNegocio.csproj"
               }
             }
           }
@@ -270,7 +270,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

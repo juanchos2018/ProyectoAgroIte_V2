@@ -22,3 +22,15 @@ D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\
 D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csproj.CopyComplete
 D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.dll
 D:\Disco local\disco\TrabajosEncargados\ProyectoSemilleroUPT\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.pdb
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CDatos.deps.json
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CDatos.dll
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CDatos.pdb
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CEntidad.dll
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CEntidad.pdb
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csprojAssemblyReference.cache
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.AssemblyInfoInputs.cache
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.AssemblyInfo.cs
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csproj.CopyComplete
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.dll
+C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.pdb

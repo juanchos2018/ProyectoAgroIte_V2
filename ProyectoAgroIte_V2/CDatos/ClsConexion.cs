@@ -25,7 +25,7 @@ namespace CDatos
         {
            
             //string connectionString = @"Data Source=" + Parametros.pc_Servidor + ";Initial Catalog=" + Parametros.pc_BaseDatos + ";User Id=" + Parametros.pc_Usuario + ";Password=" + Parametros.pc_Contrasena;
-            string connectionString = @"server=" + Parametros.pc_Servidor + ";port=3307;user =" + Parametros.pc_Usuario + ";Password=" + Parametros.pc_Contrasena+";database="+Parametros.pc_BaseDatos;
+            string connectionString = @"server=" + Parametros.pc_Servidor + ";port=3306;user =" + Parametros.pc_Usuario + ";Password=" + Parametros.pc_Contrasena+";database="+Parametros.pc_BaseDatos;
             optionBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

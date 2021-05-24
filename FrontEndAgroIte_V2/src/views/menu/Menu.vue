@@ -88,7 +88,7 @@
                           {{ item.nombre_Producto }}</b
                         >
                       </h5>
-                      <span class="post">item.Categoria.Nombre</span>
+
                     </div>
                     <ul class="social">
                       <li>

@@ -29,7 +29,7 @@ Vue.mixin({
         // servidor       
           //return "http://192.168.1.11:8081/apixml2/";
          //local
-         return "http://localhost:8085/";         
+         return "https://localhost:44357/";         
       },
       get RutaApiReniec(){
            return "http://aveoperu.com/dniconsulta/";             

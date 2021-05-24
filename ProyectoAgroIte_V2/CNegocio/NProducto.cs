@@ -57,7 +57,8 @@ namespace CNegocio
                                  Precio = pro.Precio_Referencial,
                                  Nombres = usu.Nombres,
                                  Apellidos = usu.Apellidos,
-                                 Direccion = usu.Direccion
+                                 Direccion = usu.Direccion,
+                                 Organizacion=usu.Organizacion
 
                              }).ToList();
 
@@ -89,7 +90,8 @@ namespace CNegocio
                          Precio = pro.Precio_Referencial,
                          Nombres = usu.Nombres,
                          Apellidos=usu.Apellidos,
-                         Direccion=usu.Direccion
+                         Direccion=usu.Direccion,
+                         Organizacion=usu.Organizacion
 
                      }).ToList();
 

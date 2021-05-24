@@ -32,10 +32,10 @@
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button :class="e1"  @click="Todo">Todo</button>
-                            <button :class="e2" @click="Bulba">Bulba</button>
-                            <button :class="e3" data-filter=".fruits">Frutas</button>
-							<button :class="e4" data-filter=".podded-vegetables">Vegetales</button>
-							<button :class="e5" data-filter=".root-and-tuberous">Tuberculos</button>
+                            <button :class="e2" @click="Bulba">Productos Procesados</button>
+                            <button :class="e3" data-filter=".fruits">Productos Agricolas</button>
+							<button :class="e4" data-filter=".podded-vegetables">Productos de origen Animal</button>
+						
                         </div>
                     </div>
                 </div>

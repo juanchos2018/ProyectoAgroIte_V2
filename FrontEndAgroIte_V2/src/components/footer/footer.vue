@@ -13,9 +13,9 @@
                         <div class="footer-top-box">
                             <h3>Horario de Atención:</h3>
                             <ul class="list-time">
-                                <li>Lunes - Friday: 08.00am a 05.00pm</li>
-                                <li>Viernes: 08.00am a 05.00pm</li>
-                                <li>Sabado: <span>Cerrado</span></li>
+                                <li>Lunes - Viernes: 08.00am a 05.00pm</li>
+                                <li>Sabado: 08.00am a 05.00pm</li>
+                                <li>Domingo: <span>Cerrado</span></li>
                             </ul>
                         </div>
                     </div>

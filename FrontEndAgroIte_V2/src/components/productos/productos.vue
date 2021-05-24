@@ -4,7 +4,9 @@
       <div class="title-all text-center">
                         <h1>Productos Agricolas</h1>
                         <p>¡Ultimos productos registrados!</p>
+                        
                     </div>
+                    
     <div class="row">
       <div
         class="col-4"
@@ -26,6 +28,9 @@
                 <h3 style="margin:0px;">
                   <b><i class="fa fa-user"></i></b>&nbsp;{{ item.apellidos }},
                   {{ item.nombres }}
+                </h3>
+                 <h3 style="margin:0px;">
+                  <b><i class="fa fa-users"></i></b>&nbsp;{{ item.organizacion }}
                 </h3>
                 <h3 style="margin-top:5px;margin-bottom:5px;">
                   <b><i class="fa fa-map-marker"></i></b>&nbsp;{{item.direccion}}
