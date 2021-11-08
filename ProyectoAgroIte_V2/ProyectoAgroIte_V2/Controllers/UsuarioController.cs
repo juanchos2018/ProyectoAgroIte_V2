@@ -43,7 +43,7 @@ namespace ProyectoAgroIte_V2.Controllers
             usu.Direccion           = UploadedFiles["Direccion"].ToString();
             usu.Correo              = UploadedFiles["Correo"].ToString();
             usu.IdActividad         = int.Parse(UploadedFiles["IdActividad"].ToString());
-            usu.Alias               = UploadedFiles["Alias"].ToString();
+          
             usu.Contraseña          = UploadedFiles["Contrasena"].ToString();
             usu.Organizacion        = UploadedFiles["Organizacion"].ToString();
             usu.Descripcion         = UploadedFiles["Descripcion"].ToString();
@@ -104,6 +104,15 @@ namespace ProyectoAgroIte_V2.Controllers
         {
             NUsuario nusuario = new NUsuario();
             return Json(nusuario.GetUser(d));
+        }
+
+
+        [Route("Usuario/GetAllUsers")]
+        public JsonResult GetAllUsers()
+        {
+            NUsuario nusuario = new NUsuario();
+            return Json(nusuario.GetAllUsers());
+
         }
 
         [Route("Usuario/SetPhoto")]

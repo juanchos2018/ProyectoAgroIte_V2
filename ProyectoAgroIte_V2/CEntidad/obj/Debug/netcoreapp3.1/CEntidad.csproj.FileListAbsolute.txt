@@ -25,3 +25,12 @@ C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\
 C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.csproj.CoreCompileInputs.cache
 C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.dll
 C:\Users\Virginia Aquino\Desktop\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.pdb
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\bin\Debug\netcoreapp3.1\CEntidad.deps.json
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\bin\Debug\netcoreapp3.1\CEntidad.dll
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\bin\Debug\netcoreapp3.1\CEntidad.pdb
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.csprojAssemblyReference.cache
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.AssemblyInfoInputs.cache
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.AssemblyInfo.cs
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.csproj.CoreCompileInputs.cache
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.dll
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CEntidad\obj\Debug\netcoreapp3.1\CEntidad.pdb

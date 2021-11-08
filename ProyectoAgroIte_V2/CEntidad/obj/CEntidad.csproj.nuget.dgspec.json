@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {}
+    "C:\\proyectos\\VirginiaSemilleros\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
+    "C:\\proyectos\\VirginiaSemilleros\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
+        "projectUniqueName": "C:\\proyectos\\VirginiaSemilleros\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
         "projectName": "CEntidad",
-        "projectPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
-        "packagesPath": "C:\\Users\\Virginia Aquino\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Virginia Aquino\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\obj\\",
+        "projectPath": "C:\\proyectos\\VirginiaSemilleros\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\CEntidad.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\proyectos\\VirginiaSemilleros\\ProyectoAgroIte_V2\\ProyectoAgroIte_V2\\CEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Virginia Aquino\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

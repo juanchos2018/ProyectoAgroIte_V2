@@ -1,0 +1,13 @@
+::v-deep .my-class {
+    background: black;
+    color: white;
+  }
+
+  ::v-deep .my-second-class > .modal-dialog > .modal-content > .modal-header {
+    background: black;
+    color: white;
+  }
+
+  ::v-deep .myDiv {
+      background-color: 	#FFFFFF;
+  }

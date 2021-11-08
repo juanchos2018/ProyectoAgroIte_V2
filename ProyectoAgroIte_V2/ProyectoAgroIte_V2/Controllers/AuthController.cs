@@ -48,7 +48,7 @@ namespace ProyectoAgroIte_V2.Controllers
                     token = tokenString,
                     userDetails = new
                     {
-                        Alias = user.Alias,
+                        
                         IdUsuario = user.IdUsuario,
                         Nombre = user.Nombres,  
                         UrlFoto=user.RutaFoto_Perfil,
@@ -81,7 +81,7 @@ namespace ProyectoAgroIte_V2.Controllers
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, userInfo.Alias),
+             ///   new Claim(JwtRegisteredClaimNames.Sub, userInfo.Alias),
                 new Claim("Id", userInfo.IdUsuario.ToString()),
                 new Claim("Nombre", fullname),
                  new Claim("Img", userInfo.RutaFoto_Perfil),

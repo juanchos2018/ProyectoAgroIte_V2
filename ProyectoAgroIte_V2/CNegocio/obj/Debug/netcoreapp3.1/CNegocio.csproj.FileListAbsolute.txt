@@ -54,3 +54,17 @@ C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debu
 C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.csproj.CopyComplete
 C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.dll
 C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.pdb
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CNegocio.deps.json
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CNegocio.dll
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CNegocio.pdb
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CDatos.dll
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CEntidad.dll
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CDatos.pdb
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\bin\Debug\netcoreapp3.1\CEntidad.pdb
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.csprojAssemblyReference.cache
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.AssemblyInfoInputs.cache
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.AssemblyInfo.cs
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.csproj.CoreCompileInputs.cache
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.csproj.CopyComplete
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.dll
+C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CNegocio\obj\Debug\netcoreapp3.1\CNegocio.pdb

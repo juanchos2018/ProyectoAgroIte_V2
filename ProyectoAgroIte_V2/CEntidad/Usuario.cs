@@ -47,9 +47,7 @@ namespace CEntidad
         [StringLength(500)]
         public string Correo { get; set; }
 
-        //[Required]
-        [StringLength(500)]
-        public string Alias { get; set; }
+      
 
         //[Required]
         [StringLength(500)]
@@ -60,6 +58,11 @@ namespace CEntidad
 
         [StringLength(500)]
         public string Descripcion { get; set; }
+
+
+        [NotMapped]
+        public Object Name { get; set; }
+
 
         public virtual Actividad Actividad { get; set; }
 

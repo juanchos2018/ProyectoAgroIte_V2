@@ -41,7 +41,7 @@ namespace CNegocio
             {
                 return db.Usuario
                     .Where(d => d.Contraseña == Login.Contraseña)
-                    .Where(d => d.Alias == Login.Alias)                    
+                    .Where(d => d.Correo == Login.Correo)                    
                     .FirstOrDefault();
             }
         }
@@ -54,6 +54,64 @@ namespace CNegocio
                     .FirstOrDefault();
             }
         }
+
+        public IEnumerable<Usuario> GetListdddda2()
+        {
+            using (var db = new ClsConexion())
+            {
+                //   return db.FormaVenta.ToList();
+                var lista = new List<Usuario>();
+                var query = db.Usuario.ToList();
+                foreach (var item in query)
+                {
+                    var name = new
+                    {
+                        first = item.Nombres,
+                        last = item.Apellidos
+                    };
+
+                    lista.Add(new Usuario()
+                    {   IdUsuario=item.IdUsuario,
+                        Name = name,
+                        Celular=item.Celular,
+                        Correo=item.Correo,                      
+
+                    });                 
+                }
+                return lista;
+            }
+        }
+
+        public List<Usuario> GetAllUsers()
+        {
+            using (var db = new ClsConexion())
+            {
+                /// return db.Usuario.ToList();
+                var lista = new List<Usuario>();
+                var query = db.Usuario.ToList();
+                foreach (var item in query)
+                {
+                    var name = new
+                    {
+                        first = item.Nombres,
+                        last = item.Apellidos
+                    };
+                    lista.Add(new Usuario()
+                    {
+                        IdUsuario = item.IdUsuario,
+                        Name = name,
+                        Celular = item.Celular,
+                        Correo = item.Correo         
+
+                    });
+                 
+                }
+                return lista;
+            }
+        }
+
+
+
 
         public Usuario UpdatePhoto(Usuario c)
         {
@@ -77,7 +135,7 @@ namespace CNegocio
                     .FirstOrDefault();
                 resul.Nombres = c.Nombres;
                 resul.Apellidos = c.Apellidos;
-                resul.Alias = c.Alias;
+            
                 resul.Correo = c.Correo;
                 resul.Direccion = c.Direccion;
                 resul.Celular = c.Celular;
