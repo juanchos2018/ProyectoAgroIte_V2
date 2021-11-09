@@ -6,10 +6,13 @@
         @mouseleave="sidebarMouseLeave"
     >
       <header class="logo">
-         <img src="../../assets/imgtaxi.png" width="50%" alt=""><br>       
-          <span class="primary-word"  >  Drisonet  </span>
+         <img src="../../assets/logo/logo.png" width="50%" alt=""><br>       
+         
       </header>
-      <ul class="nav">
+
+       <hr class="my-3">
+       <ul class="navbar-nav">
+    
         <NavLink
             :activeItem="activeItem"
             header="Inicio"
@@ -18,6 +21,7 @@
             index="inicio"
             isHeader
         />
+       
          <NavLink
             
             header="Actividad"
@@ -29,6 +33,7 @@
         <NavLink
            
             header="Usuarios"
+            
             link="/app/usuariolist"
             iconName="flaticon-home"
             index="usurio"
@@ -48,39 +53,93 @@
         <NavLink
           
             header="Categoria"
-            link="/app/publicacioneslista"
+            link="/app/categorialist"
             iconName="flaticon-home"
-            index="publicaciones"
+            index="Categoria"
             isHeader
           /> 
-
 
      <NavLink
            
             header="Frecuencia"
-            link="/app/publicacioneslista"
+            link="/app/frecuencialist"
             iconName="flaticon-home"
-            index="publicaciones"
+            index="Frecuencia"
             isHeader
           /> 
 
          <NavLink
             :activeItem="activeItem"
-            header="Publicaciones"
-            link="/app/publicacioneslista"
+            header="Unidad de volumen"
+            link="/app/unidadvolumenlist"
             iconName="flaticon-home"
             index="publicaciones"
             isHeader
           /> 
           <NavLink
             :activeItem="activeItem"
-            header="Taxistas"
+            header="Productos"
+            link="/app/productolist"
+            iconName="flaticon-home"
+            index="taxistas"
+            isHeader
+          />
+          <NavLink
+            :activeItem="activeItem"
+            header="Vehiculo"
             link="/app/taxistas"
             iconName="flaticon-home"
             index="taxistas"
             isHeader
           />
-         
+          <NavLink
+            :activeItem="activeItem"
+            header="Trasportista"
+            link="/app/taxistas"
+            iconName="flaticon-home"
+            index="taxistas"
+            isHeader
+          />
+          <NavLink
+            :activeItem="activeItem"
+            header="Compra"
+            link="/app/taxistas"
+            iconName="flaticon-home"
+            index="taxistas"
+            isHeader
+          />
+           <NavLink
+            :activeItem="activeItem"
+            header="Pagos"
+            link="/app/taxistas"
+            iconName="flaticon-home"
+            index="taxistas"
+            isHeader
+          />
+          <NavLink
+            :activeItem="activeItem"
+            header="Pedidos"
+            link="/app/taxistas"
+            iconName="flaticon-home"
+            index="taxistas"
+            isHeader
+          />
+          <NavLink
+            :activeItem="activeItem"
+            header="Entrega"
+            link="/app/taxistas"
+            iconName="flaticon-home"
+            index="taxistas"
+            isHeader
+          />
+          <NavLink
+            :activeItem="activeItem"
+            header="Ubicacion"
+            link="/app/taxistas"
+            iconName="flaticon-home"
+            index="taxistas"
+            isHeader
+          />
 
     
       </ul>

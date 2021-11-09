@@ -7,38 +7,29 @@ import Login from '@/pages/Login/Login';
 import ErrorPage from '@/pages/Error/Error';
 // Main
 import AnalyticsPage from '@/pages/Dashboard/Dashboard';
-
-import Publicaciones from '@/pages/Publicaciones/Publicaciones';
-import PublicacionesLista from '@/pages/Publicaciones/PublicacionesLista';
-
-import Registro from '@/pages/Registro/Registro';
-import RegistroEmpresa from '@/pages/Registro/RegistroEmpresa';
-import Chat from '@/pages/Chat/Chat';
-
-import Solicitudes from '@/pages/Solicitudes/Solicitudes';
-import Taxista from '@/pages/Taxista/Taxista';
-import TaxistaDetalle from '@/pages/Taxista/TaxistaDetalle';
-
 //Nuevas Rutas
-
-
 import ActividadList from '@/pages/Actividad/ActividadList';
 import ActividadAdd from '@/pages/Actividad/ActividadAdd';
-
-
 
 import UsuarioList from '@/pages/Usuario/UsuarioList';
 import UsuarioAdd from '@/pages/Usuario/UsuarioAdd';
 
-
 import AsociacionList from '@/pages/Asociacion/AsociacionList';
 import AsociacionAdd from '@/pages/Asociacion/AsociacionAdd';
 
+import CategoriaList from '@/pages/Categoria/CategoriaList';
+import CategoriaAdd from '@/pages/Categoria/CategoriaAdd';
+
+import FrecuenciaList from '@/pages/Frecuencia/FrecuenciaList';
+import FrecuenciaAdd from '@/pages/Frecuencia/FrecuenciaAdd';
+
+import UnidadVolumenList from '@/pages/UnidadVolumen/UnidadVolumenList';
+import UnidadVolumenAdd from '@/pages/UnidadVolumen/UnidadVolumenAdd';
+
+import ProductoAdd from '@/pages/Producto/ProductoAdd'
+import ProductoList from '@/pages/Producto/ProductoList'
+
 Vue.use(Router);
-
-//952341137  
-
-
 export default new Router({
     routes: [{
             path: '/login',
@@ -50,11 +41,7 @@ export default new Router({
             name: 'Error',
             component: ErrorPage,
         },
-        {
-            path: '/registro',
-            name: 'Registro',
-            component: RegistroEmpresa,
-        },
+        
         {
             path: '/app',
             name: 'Layout',
@@ -64,44 +51,7 @@ export default new Router({
                     name: 'AnalyticsPage',
                     component: AnalyticsPage,
                 },
-                {
-                    path: 'chat/:id_usuario',
-                    name: 'chat',
-                    component: Chat,
-                },
-                {
-                    path: 'publicaciones',
-                    name: 'publicaciones',
-                    component: Publicaciones,
-                },
-                {
-                    path: 'publicacioneslista',
-                    name: 'publicacioneslista',
-                    component: PublicacionesLista,
-                },
-                {
-                    path: 'taxistas',
-                    name: 'taxistas',
-                    component: Taxista,
-                },
-                {
-                    path: 'taxistas',
-                    name: 'taxistas',
-                    component: Taxista,
-                },
-                { //  path: 'preventa/PreventaDetalle/:id',
-                    path: 'taxistasdetalle/:id_usuario',
-                    name: 'taxistasdetalle',
-                    component: TaxistaDetalle,
-                },
-                {
-                    path: 'Solicitudes/:id',
-                    name: 'Solicitudes',
-                    component: Solicitudes,
-                },
-                //Nuevas Rutas
-
-
+            
                 {
                     path: 'actividadlist',
                     name: 'Actividad',
@@ -133,6 +83,47 @@ export default new Router({
                     path: 'asociacionadd',
                     name: 'Asociacion',
                     component: AsociacionAdd,
+                },
+                {
+                    path: 'categorialist',
+                    name: 'Categoria',
+                    component: CategoriaList,
+                },
+                {
+                    path: 'categoriaadd',
+                    name: 'Categoria',
+                    component: CategoriaAdd,
+                },
+                {
+                    path: 'frecuencialist',
+                    name: 'Frecuencia',
+                    component: FrecuenciaList,
+                },
+                {
+                    path: 'frecuenciaadd',
+                    name: 'FrecuenciaAdd',
+                    component: FrecuenciaAdd,
+                },
+                {
+                    path: 'unidadvolumenlist',
+                    name: 'UnidadVolumen',
+                    component: UnidadVolumenList,
+                },
+                {
+                    path: 'unidadvolumenadd',
+                    name: 'UnidadVolumenAdd',
+                    component: UnidadVolumenAdd,
+                },
+                {
+                    path: 'productolist',
+                    name: 'Producto',
+                    component:ProductoList,
+ 
+                },
+                {
+                    path: 'productoadd',
+                    name: 'ProductoAdd',
+                    component:ProductoAdd,
                 },
 
             ],

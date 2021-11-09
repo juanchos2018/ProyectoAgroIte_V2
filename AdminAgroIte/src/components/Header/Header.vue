@@ -8,7 +8,7 @@
         <a class="fs-lg d-lg-none" href="#" @click="switchSidebarMethod">
           <i class="la la-bars la-lg" />
         </a>
-        <img src="../../assets/imgtaxi.png" width="8%" style=" height: auto"  alt="">
+        <img src="../../assets/logo/logo.png" width="8%" style=" height: auto"  alt="">
          <div class="site-branding-text d-md-down-none">
             <h5 class="site-title"  style="font-size:1.30vw;" > <strong>  </strong></h5>
             <p class="site-description" style="font-size:1.0vw; color:#808080" > </p>

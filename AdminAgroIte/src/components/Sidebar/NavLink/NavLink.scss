@@ -11,8 +11,8 @@
 
   a {
     display: block;
-    color: #656567;
-    font-weight: bold;
+    color: #464743;
+    font-weight: bolder;
     //color: var(--sidebar-color);
     text-decoration: none;
     cursor: pointer;
@@ -31,7 +31,7 @@
     border-top: 1px solid $sidebar-item-border-color;
 
     &:hover {
-      background-color: #EBEDF2;
+      background-color: hsl(0, 0%, 100%);
    //   background-color: var(--sidebar-item-hover-bg-color);
     }
 

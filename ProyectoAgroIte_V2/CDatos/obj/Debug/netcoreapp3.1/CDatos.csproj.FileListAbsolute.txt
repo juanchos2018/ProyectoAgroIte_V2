@@ -46,3 +46,16 @@ C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj
 C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csproj.CopyComplete
 C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.dll
 C:\proyectos\VirginiaSemilleros\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.pdb
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CDatos.deps.json
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CDatos.dll
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CDatos.pdb
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CEntidad.dll
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\bin\Debug\netcoreapp3.1\CEntidad.pdb
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csproj.AssemblyReference.cache
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.AssemblyInfoInputs.cache
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.AssemblyInfo.cs
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.csproj.CopyComplete
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.dll
+C:\Users\Virginia Aquino\ProyectoAgroIte_V2\ProyectoAgroIte_V2\ProyectoAgroIte_V2\CDatos\obj\Debug\netcoreapp3.1\CDatos.pdb

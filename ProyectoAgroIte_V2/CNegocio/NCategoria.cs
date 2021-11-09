@@ -13,10 +13,31 @@ namespace CNegocio
         {
             using (var db = new ClsConexion())
             {
-                var lista = db.Categoria.ToList();
+                // var lista = db.Asociacion.ToList();
+                // return lista;
+                var lista = new List<Categoria>();
+                var query = db.Categoria.ToList();
+                foreach (var item in query)
+                {
+                    var name = new
+                    {
+                        first = item.Nombre,
+                        last = item.Nombre
+                    };
+                    lista.Add(new Categoria()
+                    {
+                        IdCategoria = item.IdCategoria,
+                        Name = name,
+                        Nombre = item.Nombre
+                     
+
+                    });
+
+                }
                 return lista;
             }
         }
+
         public string SetCategoria(Categoria data)
         {
             using (var db = new ClsConexion())
@@ -40,5 +61,6 @@ namespace CNegocio
                 }
             }
         }
+
     }
 }
