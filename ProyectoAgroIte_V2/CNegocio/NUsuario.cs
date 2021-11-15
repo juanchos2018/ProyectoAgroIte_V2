@@ -55,6 +55,15 @@ namespace CNegocio
             }
         }
 
+        public Usuario GetUser2(int user)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Usuario
+                    .Where(d => d.IdUsuario == user)
+                    .FirstOrDefault();
+            }
+        }
         public IEnumerable<Usuario> GetListdddda2()
         {
             using (var db = new ClsConexion())
@@ -145,5 +154,27 @@ namespace CNegocio
                 return resul;
             }
         }
+
+        public Usuario UpdateUsuario2(Usuario c)
+        {
+            using (var db = new ClsConexion())
+            {
+                var resul = db.Usuario
+                    .Where(d => d.IdUsuario == c.IdUsuario)
+                    .FirstOrDefault();
+                resul.Nombres = c.Nombres;
+                resul.Apellidos = c.Apellidos;
+
+                resul.Correo = c.Correo;
+                resul.Direccion = c.Direccion;
+                resul.Celular = c.Celular;
+                resul.Organizacion = c.Organizacion;
+
+                db.SaveChanges();
+                return resul;
+            }
+        }
+
+
     }
 }

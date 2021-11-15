@@ -40,5 +40,26 @@ namespace CNegocio
                 }
             }
         }
+
+
+        public Frecuencia EditFrecuencia(Frecuencia c)
+        {
+            using (var db = new ClsConexion())
+            {
+                var resul = db.Frecuencia
+                    .Where(d => d.Idfrecuencia == c.Idfrecuencia)
+                    .FirstOrDefault();
+                resul.Nombre = c.Nombre;
+                db.SaveChanges();
+                return resul;
+            }
+        }
+        public Frecuencia InfoFrecuencia(int id)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Frecuencia.Where(x => x.Idfrecuencia == id).FirstOrDefault();
+            }
+        }
     }
 }

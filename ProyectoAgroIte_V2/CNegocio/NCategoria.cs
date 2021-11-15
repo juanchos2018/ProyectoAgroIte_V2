@@ -62,5 +62,25 @@ namespace CNegocio
             }
         }
 
+        public Categoria InfoCategoria(int idproducto)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Categoria.Where(x => x.IdCategoria == idproducto).FirstOrDefault();
+            }
+        }
+        public Categoria EditCategoria(Categoria c)
+        {
+            using (var db = new ClsConexion())
+            {
+                var resul = db.Categoria
+                    .Where(d => d.IdCategoria == c.IdCategoria)
+                    .FirstOrDefault();
+                resul.Nombre = c.Nombre;
+                db.SaveChanges();
+                return resul;
+            }
+        }
+
     }
 }

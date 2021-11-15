@@ -58,6 +58,38 @@ namespace ProyectoAgroIte_V2.Controllers
                 return Json(e);
             }
         }
-      
+
+        [Route("Categoria/InfoCategoria")]
+        public JsonResult InfoCategoria([FromBody] Categoria d)
+        {
+            int id = d.IdCategoria;
+            NCategoria categoria = new NCategoria();
+            var query = categoria.InfoCategoria(id);
+            return Json(query);
+        }
+
+        [Route("Categoria/EditCategoria")]
+        public IActionResult EditCategoria([FromBody] Categoria d)
+        {
+            try
+            {
+                NCategoria categoria = new NCategoria();
+                var result = categoria.EditCategoria(d);
+                string msg;
+                string estado;
+                var data = new
+                {
+                    estado = "OK",
+                    msg = "Datos Actualizados",
+
+                };
+                return Json(data);
+                //  return Json(salida);
+            }
+            catch (Exception e)
+            {
+                return Json(e);
+            }
+        }
     }
 }

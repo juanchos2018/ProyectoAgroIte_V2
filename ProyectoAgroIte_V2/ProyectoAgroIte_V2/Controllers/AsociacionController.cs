@@ -35,6 +35,15 @@ namespace ProyectoAgroIte_V2.Controllers
             return Json(query);
         }
 
+
+        [Route("Asociacion/GetAsociacionAll")]
+        public JsonResult GetAsociacionAll()
+        {
+            NAsociacion actividad = new NAsociacion();
+            var query = actividad.GetAsociacion2();
+            return Json(query);
+        }
+
         [Route("Asociacion/SetAsociacion")]
         public IActionResult Guardar([FromBody] Asociacion d)
         {

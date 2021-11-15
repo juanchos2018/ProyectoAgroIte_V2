@@ -30,7 +30,6 @@ namespace ProyectoAgroIte_V2.Controllers
 
 
         [Route("Usuario/SetUsuario")]
-        //public IActionResult SubirArchivos(IFormCollection UploadedFiles)
         public IActionResult Guardar(IFormCollection UploadedFiles)
         {
             Usuario usu = new Usuario();
@@ -42,8 +41,7 @@ namespace ProyectoAgroIte_V2.Controllers
             usu.Celular             = UploadedFiles["Celular"].ToString();
             usu.Direccion           = UploadedFiles["Direccion"].ToString();
             usu.Correo              = UploadedFiles["Correo"].ToString();
-            usu.IdActividad         = int.Parse(UploadedFiles["IdActividad"].ToString());
-          
+            usu.IdActividad         = int.Parse(UploadedFiles["IdActividad"].ToString());          
             usu.Contraseña          = UploadedFiles["Contrasena"].ToString();
             usu.Organizacion        = UploadedFiles["Organizacion"].ToString();
             usu.Descripcion         = UploadedFiles["Descripcion"].ToString();
@@ -99,13 +97,101 @@ namespace ProyectoAgroIte_V2.Controllers
             }
         }
 
-        [Route("Usuario/GetUsuario")]
+
+
+        [Route("Usuario/UpdateUsuario2")]
+        public IActionResult UpdateUsuario2(IFormCollection UploadedFiles)
+        {
+            Usuario usu = new Usuario();
+            string filePath = "";
+            usu.Nombres = UploadedFiles["Nombres"].ToString();
+            usu.Apellidos = UploadedFiles["Apellidos"].ToString();
+            usu.Tipo_Documento = int.Parse(UploadedFiles["Tipo_Documento"].ToString());
+            usu.Num_Identificacion = UploadedFiles["Num_Identificacion"].ToString();
+            usu.Celular = UploadedFiles["Celular"].ToString();
+            usu.Direccion = UploadedFiles["Direccion"].ToString();
+            usu.Correo = UploadedFiles["Correo"].ToString();
+            usu.IdActividad = int.Parse(UploadedFiles["IdActividad"].ToString());
+           
+            usu.Organizacion = UploadedFiles["Organizacion"].ToString();
+            usu.Descripcion = UploadedFiles["Descripcion"].ToString();
+            usu.IdUsuario = int.Parse( UploadedFiles["IdUsuario"].ToString());
+
+
+
+            string ruta = Path.Combine(_env.WebRootPath, "img/user");
+            long size = UploadedFiles.Files.Sum(f => f.Length);
+            string fileName = "";
+            string rutaimguser = "";
+            if (size == 0)
+            {
+                rutaimguser = "";
+            }
+            else
+            {
+                foreach (var formFile in UploadedFiles.Files)
+                {
+                    if (formFile.Length > 0)
+                    {
+                        fileName = usu.Num_Identificacion + "-" + formFile.FileName;
+                        filePath = Path.Combine(ruta, fileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            formFile.CopyTo(fileStream);
+                        }
+                    }
+                }
+                // rutaimguser = filePath;
+                rutaimguser = "img/user/" + fileName;
+            }
+          //  usu.RutaFoto_Perfil = rutaimguser;
+            NUsuario nusuario = new NUsuario();
+
+            try
+            {
+                var result = nusuario.UpdateUsuario2(usu);
+                string msg;
+                string estado;
+             
+            
+                var salida = new
+                {
+                    Estado = "ok",
+                    Mensaje = "Editado",
+                    detalle = result
+                };
+                return Json(salida);
+            }
+            catch (Exception e)
+            {
+                return Json(e);
+            }
+        }
+
+
+
+        [Route("Usuario/GetUsuario2")]
         public JsonResult GetId([FromBody] Usuario d)
         {
             NUsuario nusuario = new NUsuario();
             return Json(nusuario.GetUser(d));
+
+
+            //int idusu = d.IdUsuario;
+            //NUsuario nusuario = new NUsuario();
+            //var query = nusuario.GetUser2(idusu);
+            //return Json(query);
+
         }
 
+        [Route("Actividad/InfoActividad11")]
+        public JsonResult InfoActividad([FromBody] Actividad d)
+        {
+            int idactividad = d.IdActividad;
+            NActividad acti = new NActividad();
+            var query = acti.InfoACtividad(idactividad);
+            return Json(query);
+        }
 
         [Route("Usuario/GetAllUsers")]
         public JsonResult GetAllUsers()

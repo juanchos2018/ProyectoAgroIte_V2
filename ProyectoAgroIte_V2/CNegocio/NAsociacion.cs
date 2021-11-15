@@ -40,6 +40,20 @@ namespace CNegocio
             }
         }
 
+
+
+
+        public List<Asociacion> GetAsociacion2()
+        {
+            using (var db = new ClsConexion())
+            {
+                // var lista = db.Asociacion.ToList();
+                // return lista;              
+                var query = db.Asociacion.ToList();              
+                return query;
+            }
+        }
+
         public string SetAsociacion(Asociacion data)
         {
             using (var db = new ClsConexion())

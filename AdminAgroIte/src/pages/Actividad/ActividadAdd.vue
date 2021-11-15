@@ -2,9 +2,7 @@
   <div>
     <div class="container">
       <div>
-
-
-           <b-card
+      <b-card
         class="mt-3"
         header="Agregar Actividad"
         header-text-variant="white"

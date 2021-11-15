@@ -57,5 +57,41 @@ namespace ProyectoAgroIte_V2.Controllers
                 return Json(e);
             }
         }
+
+
+        [Route("Frecuencia/InfoFrecuencia")]
+        public JsonResult InfoFrecuencia([FromBody] Frecuencia d)
+        {
+            int id = d.Idfrecuencia;
+            NFrecuencia frecuencia = new NFrecuencia();
+            var query = frecuencia.InfoFrecuencia(id);
+            return Json(query);
+        }
+
+        [Route("Frecuencia/EditFrecuencia")]
+        public IActionResult EditFrecuencia([FromBody] Frecuencia d)
+        {
+            try
+            {
+                NFrecuencia frecuencia = new NFrecuencia();
+                var result = frecuencia.EditFrecuencia(d);
+                string msg;
+                string estado;
+                var data = new
+                {
+                    estado = "OK",
+                    msg = "Datos Actualizados",
+
+                };
+                return Json(data);
+                //  return Json(salida);
+            }
+            catch (Exception e)
+            {
+                return Json(e);
+            }
+        }
+
+
     }
 }

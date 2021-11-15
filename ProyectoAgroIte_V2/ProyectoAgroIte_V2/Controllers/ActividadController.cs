@@ -59,5 +59,42 @@ namespace ProyectoAgroIte_V2.Controllers
                 return Json(e);
             }
         }
+
+        [Route("Actividad/EditActividad")]
+        public IActionResult EditActividad([FromBody] Actividad d)
+        {           
+            try
+            {
+                NActividad cliente = new NActividad();
+                var result = cliente.EditActividad(d);
+                string msg;
+                string estado;
+                var data = new
+                {
+                    estado = "OK",
+                    msg = "Datos Actualizados",
+
+                };
+                return Json(data);
+              //  return Json(salida);
+            }
+            catch (Exception e)
+            {
+                return Json(e);
+            }
+        }
+
+
+        [Route("Actividad/InfoActividad")]
+        public JsonResult InfoActividad([FromBody] Actividad d)
+        {
+            int idactividad = d.IdActividad;
+            NActividad acti = new NActividad();
+            var query = acti.InfoACtividad(idactividad);
+            return Json(query);
+        }
+
+
+
     }
 }

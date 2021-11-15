@@ -41,6 +41,44 @@ namespace CNegocio
             }
         }
 
+
+        public string EditActividad2(Actividad data)
+        {
+            using (var db = new ClsConexion())
+            {
+                try
+                {
+                    var sss = db.Actividad.Add(data);
+                    var result = db.SaveChanges();
+                    if (result > 0)
+                    {
+                        return "OK";
+                    }
+                    else
+                    {
+                        return "Error";
+                    }
+                }
+                catch (Exception e)
+                {
+                    return e.InnerException.Message.ToString();
+                }
+            }
+        }
+
+        public Actividad EditActividad(Actividad c)
+        {
+            using (var db = new ClsConexion())
+            {
+                var resul = db.Actividad
+                    .Where(d => d.IdActividad == c.IdActividad)
+                    .FirstOrDefault();
+                resul.Nombre = c.Nombre;
+                db.SaveChanges();
+                return resul;
+            }
+        }
+
         public string GetActividad(int id)
         {
             using (var db = new ClsConexion())
@@ -49,6 +87,13 @@ namespace CNegocio
                     .Where(d => d.IdActividad ==id)
                     .Select(d => d.Nombre)
                     .First();
+            }
+        }
+        public Actividad InfoACtividad(int idproducto)
+        {
+            using (var db = new ClsConexion())
+            {
+                return db.Actividad.Where(x => x.IdActividad == idproducto).FirstOrDefault();
             }
         }
     }

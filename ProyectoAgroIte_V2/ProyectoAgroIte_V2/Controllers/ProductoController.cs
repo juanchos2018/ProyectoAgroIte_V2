@@ -30,7 +30,7 @@ namespace ProyectoAgroIte_V2.Controllers
         }
 
         [Route("Producto/SetProducto")]
-        //public IActionResult SubirArchivos(IFormCollection UploadedFiles)
+      
         public IActionResult Guardar(IFormCollection UploadedFiles)
         {
             Producto pro = new Producto();
@@ -42,7 +42,7 @@ namespace ProyectoAgroIte_V2.Controllers
             pro.Descripcion_Producto = UploadedFiles["Descripcion_Producto"].ToString();
             pro.Fecha_Inicio = UploadedFiles["Fecha_Inicio"].ToString();
             pro.Fecha_Fin = UploadedFiles["Fecha_Fin"].ToString();
-            pro.Cantidad_Producida = UploadedFiles["Cantidad_Producida"].ToString();
+            pro.Cantidad_Producida = decimal.Parse( UploadedFiles["Cantidad_Producida"].ToString());
             pro.IdUnidad_Volumen = int.Parse(UploadedFiles["IdUnidad_Volumen"].ToString());
             pro.Idfrecuencia = int.Parse( UploadedFiles["Idfrecuencia"].ToString());
             pro.IdUsuario =int.Parse( UploadedFiles["IdUsuario"].ToString());          
@@ -96,7 +96,89 @@ namespace ProyectoAgroIte_V2.Controllers
                 return Json(e);
             }
         }
-       
+
+
+
+        [Route("Producto/SetProducto2")]
+        //public IActionResult SubirArchivos(IFormCollection UploadedFiles)
+        public IActionResult Guardar2(IFormCollection UploadedFiles)
+        {
+            Producto pro = new Producto();
+            NProducto nusuario = new NProducto();
+            string filePath = "";
+            pro.IdCategoria = int.Parse(UploadedFiles["IdCategoria"].ToString());
+            pro.Nombre_Producto = UploadedFiles["Nombre_Producto"].ToString();
+            pro.Precio_Referencial = int.Parse(UploadedFiles["Precio_Referencial"].ToString());
+            pro.Descripcion_Producto = UploadedFiles["Descripcion_Producto"].ToString();
+            pro.Fecha_Inicio = UploadedFiles["Fecha_Inicio"].ToString();
+            pro.Fecha_Fin = UploadedFiles["Fecha_Fin"].ToString();
+            pro.Cantidad_Producida = decimal.Parse( UploadedFiles["Cantidad_Producida"].ToString());           
+            pro.IdUnidad_Volumen = int.Parse(UploadedFiles["IdUnidad_Volumen"].ToString());
+            pro.Idfrecuencia = int.Parse(UploadedFiles["Idfrecuencia"].ToString());
+            pro.IdUsuario = int.Parse(UploadedFiles["IdUsuario"].ToString());
+
+
+            pro.Cantidad_Maxima = decimal.Parse(UploadedFiles["Cantidad_Maxima"].ToString());
+            pro.Cantidad_Minima = decimal.Parse(UploadedFiles["Cantidad_Minima"].ToString());
+            pro.IdAsociacion = int.Parse(UploadedFiles["IdAsociacion"].ToString());
+
+            string ruta = Path.Combine(_env.WebRootPath, "img/product");
+            long size = UploadedFiles.Files.Sum(f => f.Length);
+            string fileName = "";
+            string rutaimguser = "";
+            if (size == 0)
+            {
+                rutaimguser = "img/product/default.png";
+            }
+            else
+            {
+                foreach (var formFile in UploadedFiles.Files)
+                {
+                    if (formFile.Length > 0)
+                    {
+                        fileName = pro.IdUsuario + "-" + formFile.FileName;
+                        filePath = Path.Combine(ruta, fileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            formFile.CopyTo(fileStream);
+                        }
+                    }
+                }
+                // rutaimguser = filePath;
+                rutaimguser = "img/product/" + fileName;
+            }
+            pro.RutaImagenes_Producto = rutaimguser;
+
+            try
+            {
+                var result = nusuario.SetProducto(pro);
+                string msg;
+                string estado;
+                if (result == "OK") { msg = "Datos Insertados Correctamente"; estado = "OK"; }
+                else if (result.Substring(0, 24) == "Violation of PRIMARY KEY")
+                { msg = "Producto ya se encuentra registrado"; estado = "ERROR"; }
+                else { msg = "Hubo un error "; estado = "ERROR"; }
+                var salida = new
+                {
+                    Estado = estado,
+                    Mensaje = msg,
+                    detalle = result
+                };
+                return Json(salida);
+            }
+            catch (Exception e)
+            {
+                return Json(e);
+            }
+        }
+
+
+
+
+
+
+
+
         [Route("Producto/GetMyProducto")]
         public JsonResult GetProductos([FromBody] Usuario d)
         {
@@ -136,7 +218,7 @@ namespace ProyectoAgroIte_V2.Controllers
             pro.Descripcion_Producto = UploadedFiles["Descripcion_Producto"].ToString();
             pro.Fecha_Inicio = UploadedFiles["Fecha_Inicio"].ToString();
             pro.Fecha_Fin = UploadedFiles["Fecha_Fin"].ToString();
-            pro.Cantidad_Producida = UploadedFiles["Cantidad_Producida"].ToString();
+            pro.Cantidad_Producida = decimal.Parse( UploadedFiles["Cantidad_Producida"].ToString());
             pro.IdUnidad_Volumen = int.Parse(UploadedFiles["IdUnidad_Volumen"].ToString());
             pro.Idfrecuencia = int.Parse(UploadedFiles["Idfrecuencia"].ToString());
             pro.IdUsuario = int.Parse(UploadedFiles["IdUsuario"].ToString());
