@@ -42,7 +42,7 @@ namespace ProyectoAgroIte_V2.Controllers
             usu.Direccion           = UploadedFiles["Direccion"].ToString();
             usu.Correo              = UploadedFiles["Correo"].ToString();
             usu.IdActividad         = int.Parse(UploadedFiles["IdActividad"].ToString());          
-            usu.Contraseña          = UploadedFiles["Contrasena"].ToString();
+            usu.Contrasena          = UploadedFiles["Contrasena"].ToString();
             usu.Organizacion        = UploadedFiles["Organizacion"].ToString();
             usu.Descripcion         = UploadedFiles["Descripcion"].ToString();
 

@@ -186,8 +186,15 @@
             }]
           },
           extraOptions: chartConfigs.blueChartOptions
+        },
+        Usuario:{
         }
       };
+    },
+    created() {
+        if (!this.$session.exists()) {
+             this.$router.push({name:"login"});
+       }
     },
     methods: {
       initBigChart(index) {
@@ -206,6 +213,8 @@
     },
     mounted() {
       this.initBigChart(0);
+      this.Usuario= localStorage.getItem('infoUser');
+
     }
   };
 </script>

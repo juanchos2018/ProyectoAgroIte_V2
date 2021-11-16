@@ -3,6 +3,8 @@
       <Heder></Heder>
       <router-view />   
       <br>
+
+     
     <footer1></footer1>
   </div>
 </template>
@@ -18,6 +20,7 @@ export default {
   data() {
     return {
       cartValue: 0,
+        visible: false
     };
   },
  

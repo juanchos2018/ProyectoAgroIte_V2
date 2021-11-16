@@ -44,7 +44,7 @@
             </a>
 
             <div class="dropdown-header noti-title">
-              <h6 class="text-overflow m-0">Welcome!</h6>
+              <h6 class="text-overflow m-0">Bienvenido!</h6>
             </div>
             <router-link to="/profile" class="dropdown-item">
               <i class="ni ni-single-02"></i>
@@ -65,7 +65,7 @@
             <div class="dropdown-divider"></div>
             <a href="#!" class="dropdown-item">
               <i class="ni ni-user-run"></i>
-              <span>Logout</span>
+              <span>Salir</span>
             </a>
           </base-dropdown>
         </ul>
@@ -261,6 +261,13 @@ export default {
     showSidebar() {
       this.$sidebar.displaySidebar(true);
     },
+    Salir(){
+        window.localStorage.clear();
+        this.$session.destroy()  
+        this.$router.push({name:"login"});
+          //  let data = {etiquetaSalir:false,etiquetaIniciar:true,etiquetaNombre:false}
+           // this.$store.commit('EstadoNoLogueado', data);
+    }
   },
   beforeDestroy() {
     if (this.$sidebar.showSidebar) {

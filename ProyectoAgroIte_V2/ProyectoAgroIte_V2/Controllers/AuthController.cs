@@ -47,12 +47,10 @@ namespace ProyectoAgroIte_V2.Controllers
                 {
                     token = tokenString,
                     userDetails = new
-                    {
-                        
+                    {                        
                         IdUsuario = user.IdUsuario,
                         Nombre = user.Nombres,  
-                        UrlFoto=user.RutaFoto_Perfil,
-
+                        UrlFoto=user.RutaFoto_Perfil
                     },
                 });
             }
@@ -84,7 +82,7 @@ namespace ProyectoAgroIte_V2.Controllers
              ///   new Claim(JwtRegisteredClaimNames.Sub, userInfo.Alias),
                 new Claim("Id", userInfo.IdUsuario.ToString()),
                 new Claim("Nombre", fullname),
-                 new Claim("Img", userInfo.RutaFoto_Perfil),
+                new Claim("Img", userInfo.RutaFoto_Perfil),
                 new Claim("Actividad",activida),               
                 new Claim(ClaimTypes.Role,activida),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),

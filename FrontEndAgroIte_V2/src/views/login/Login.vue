@@ -7,7 +7,7 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="InputEmail" class="mb-0">Alias</label>
+            <label for="InputEmail" class="mb-0">Correo</label>
             <input
               type="text"
               class="form-control"
@@ -64,33 +64,34 @@ export default {
   },
   created() {},
       methods: {
-          Ingresar(){
-          if (this.alias == "") {
-            return;
-          }
-          this.loanding = true;
-          axios.post(this.RutaNetCore + "Auth/Login", {
-              Alias: this.alias,
-              Contraseña: this.password,
-            })
-            .then((respuesta) => {
-              return respuesta.data;
-            }).then((data) => {                       
-              this.loanding = false;        
-              console.log(data)      
-              this.$eventHub.$emit('Ocultar')            
-              this.$store.dispatch("guardarToken", data.token);
-              this.$session.start();
-              let dataa = {etiquetaSalir:true,etiquetaIniciar:false,etiquetaNombre:true}
-              this.$store.commit('EstadoLogueado', dataa);
-              this.$router.push({name:"menu"});  
 
-            })      
-            .catch((err) => {         
-              console.log(err);
-                  this.loanding = false;
-                  this.noExiste()
-            });
+          Ingresar(){
+            if (this.alias == "") {
+              return;
+            }
+            this.loanding = true;
+            axios.post(this.RutaNetCore + "Auth/Login", {
+                Correo: this.alias,
+                Contrasena: this.password,
+              })
+              .then((respuesta) => {
+                return respuesta.data;
+              }).then((data) => {                       
+                this.loanding = false;        
+                console.log(data)      
+                this.$eventHub.$emit('Ocultar')            
+                this.$store.dispatch("guardarToken", data.token);
+                this.$session.start();
+                let dataa = {etiquetaSalir:true,etiquetaIniciar:false,etiquetaNombre:true}
+                this.$store.commit('EstadoLogueado', dataa);
+                this.$router.push({name:"menu"});  
+
+              })      
+              .catch((err) => {         
+                console.log(err);
+                    this.loanding = false;
+                    this.noExiste()
+              });
           },
           noExiste(){
           this.$swal.fire('No Existe su Usuario')

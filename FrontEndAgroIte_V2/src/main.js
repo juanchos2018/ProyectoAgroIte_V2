@@ -4,14 +4,22 @@ import router from "./router";
 import store from "./store";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import NProgress from "nprogress";
-import { BootstrapVue,VBHoverPlugin,IconsPlugin   } from 'bootstrap-vue'
+import { BootstrapVue, VBHoverPlugin, IconsPlugin } from 'bootstrap-vue'
 // require styles
 import "swiper/swiper.min.css";
 import "../node_modules/nprogress/nprogress.css";
-import VueSweetalert2 from 'vue-sweetalert2'; 
+import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import VueSession from 'vue-session'
 import "@/assets/style/global.css"
+
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
+
+import VueDrawer from 'vue-drawer-component'
+import 'vue-drawer-component/src/index.css'
+
+Vue.component(VueDrawer.name, VueDrawer)
 
 Vue.use(VueSweetalert2);
 Vue.use(VueAwesomeSwiper);
@@ -23,37 +31,37 @@ Vue.config.productionTip = false;
 
 
 Vue.mixin({
-  data: function() {
-    return {
-      get RutaNetCore() {
-        // servidor       
-          //return "http://192.168.1.11:8081/apixml2/";
-         //local
-         return "https://localhost:44357/";         
-      },
-      get RutaApiReniec(){
-           return "http://aveoperu.com/dniconsulta/";             
-      },
-     
+    data: function() {
+        return {
+            get RutaNetCore() {
+                // servidor       
+                //return "http://192.168.1.11:8081/apixml2/";
+                //local
+                return "https://localhost:44357/";
+            },
+            get RutaApiReniec() {
+                return "http://aveoperu.com/dniconsulta/";
+            },
+
+        }
     }
-  }
 })
 
 
 
 router.beforeResolve((to, from, next) => {
-  if (to.name) {
-    NProgress.start();
-  }
-  next();
+    if (to.name) {
+        NProgress.start();
+    }
+    next();
 });
 
 router.afterEach(() => {
-  NProgress.done();
+    NProgress.done();
 });
 // eslint-disable-next-line no-unused-vars
 let vm = new Vue({
-  router,
-  store,
-  render: (h) => h(App),
+    router,
+    store,
+    render: (h) => h(App),
 }).$mount("#app");

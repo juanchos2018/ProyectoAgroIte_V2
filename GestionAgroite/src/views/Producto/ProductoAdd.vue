@@ -127,7 +127,7 @@
                 </b-form-group>
               </div>
               
-              <div >
+              <div>
                     <b-button
                 type="button"
                 variant="primary"

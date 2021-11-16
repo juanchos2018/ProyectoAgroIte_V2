@@ -118,6 +118,7 @@
               <div class="col-12">
                 <h4 class="noo-sh-title">Agregar Producto</h4>
               </div>
+
               <div class="form-row">
                 <b-form-group label="Categoria:" class="col-md-4">
                   <b-form-select
@@ -135,6 +136,7 @@
                   ></b-form-input>
                 </b-form-group>
               </div>
+
               <div class="form-row">
                 <b-form-group label="Precio:" class="col-md-4">
                   <b-form-input
@@ -205,6 +207,7 @@
                     </span>
                 </b-form-group>
               </div>
+              
               <div v-if="producUser.IdProducto==''">
                     <b-button
                 type="button"

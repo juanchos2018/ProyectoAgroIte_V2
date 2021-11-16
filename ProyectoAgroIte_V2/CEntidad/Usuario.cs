@@ -51,7 +51,7 @@ namespace CEntidad
 
         //[Required]
         [StringLength(500)]
-        public string Contraseña { get; set; }
+        public string Contrasena { get; set; }
 
         [StringLength(500)]
         public string Organizacion { get; set; }

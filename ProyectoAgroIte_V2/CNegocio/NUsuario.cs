@@ -40,8 +40,8 @@ namespace CNegocio
             using (var db = new ClsConexion())
             {
                 return db.Usuario
-                    .Where(d => d.Contraseña == Login.Contraseña)
-                    .Where(d => d.Correo == Login.Correo)                    
+                    .Where(d => d.Correo == Login.Correo)
+                    .Where(d => d.Contrasena == Login.Contrasena)                               
                     .FirstOrDefault();
             }
         }

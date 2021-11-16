@@ -39,9 +39,10 @@
                     <img alt="Image placeholder" src="img/theme/team-4.jpg">
                   </span>
             <b-media-body class="ml-2 d-none d-lg-block">
-              <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+              <span class="mb-0 text-sm  font-weight-bold">{{Usuario.nombre}} </span>
             </b-media-body>
           </b-media>
+         
         </a>
 
         <template>
@@ -66,9 +67,9 @@
             <span>Support</span>
           </b-dropdown-item>
           <div class="dropdown-divider"></div>
-          <b-dropdown-item href="#!">
+          <b-dropdown-item href="#!" @click="Salir"  >
             <i class="ni ni-user-run"></i>
-            <span>Logout</span>
+            <span>Salir</span>
           </b-dropdown-item>
 
         </template>
@@ -97,15 +98,26 @@ export default {
     routeName() {
       const { name } = this.$route;
       return this.capitalizeFirstLetter(name);
-    }
+    },
+    Nombre_Usuario() {        
+        this.Usuario= localStorage.getItem('infoUser');    
+        return this.Usuario.nombre;    
+      },
   },
   data() {
     return {
       activeNotifications: false,
       showMenu: false,
       searchModalVisible: false,
-      searchQuery: ''
+      searchQuery: '',
+      Usuario:{}
     };
+  },
+  mounted() {
+    var inf= localStorage.getItem('infoUser');
+     this.Usuario= JSON.parse( inf)
+     //console.log('infoUser: ', JSON.parse( this.Usuario));
+
   },
   methods: {
     capitalizeFirstLetter(string) {
@@ -116,6 +128,13 @@ export default {
     },
     closeDropDown() {
       this.activeNotifications = false;
+    },
+      Salir(){
+        window.localStorage.clear();
+        this.$session.destroy()  
+        this.$router.push({name:"login"});
+          //  let data = {etiquetaSalir:false,etiquetaIniciar:true,etiquetaNombre:false}
+           // this.$store.commit('EstadoNoLogueado', data);
     }
   }
 };

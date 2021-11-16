@@ -72,12 +72,12 @@
           </b-dropdown-item>
           <b-dropdown-item href="#!">
             <i class="ni ni-support-16"></i>
-            <span>Support</span>
+            <span>ddddddd</span>
           </b-dropdown-item>
           <div class="dropdown-divider"></div>
           <b-dropdown-item href="#!">
             <i class="ni ni-user-run"></i>
-            <span>Logout</span>
+            <span>Salir</span>
           </b-dropdown-item>
         </b-dropdown>
       </b-nav-item-dropdown>
